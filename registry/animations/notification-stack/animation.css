@@ -1,0 +1,51 @@
+/* Uso (--i = 0 é a da frente):
+<div class="notification-stack">
+  <div class="notification-stack__card" style="--i: 0"><strong>Pagamento recebido</strong><span>agora</span></div>
+  <div class="notification-stack__card" style="--i: 1">...</div>
+</div>
+*/
+.notification-stack {
+  position: relative;
+  width: 280px;
+  max-width: 100%;
+  height: 64px;
+  margin-top: 140px; /* espaço para a pilha abrir para cima */
+  font: 14px/1.3 system-ui, sans-serif;
+}
+
+.notification-stack__card {
+  position: absolute;
+  inset: 0;
+  z-index: calc(10 - var(--i));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 16px;
+  border: 1px solid #ffffff1a;
+  border-radius: 14px;
+  background: #19191c;
+  box-shadow: 0 10px 30px #0007;
+  color: #fafafa;
+  opacity: calc(1 - var(--i) * 0.25);
+  transform: translateY(calc(var(--i) * -10px)) scale(calc(1 - var(--i) * 0.06));
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.45s ease;
+}
+
+/* estende a área de hover para cobrir o espaço entre os cards abertos */
+.notification-stack__card::before {
+  content: "";
+  position: absolute;
+  inset: -8px 0;
+}
+
+.notification-stack__card span { color: #71717a; font-size: 12px; }
+
+.notification-stack:hover .notification-stack__card {
+  opacity: 1;
+  transform: translateY(calc(var(--i) * -72px));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .notification-stack__card { transition: none; }
+}

@@ -1,0 +1,53 @@
+/* Uso:
+<div class="plx-backdrop">
+  <span class="plx-layer plx-l1"></span>
+  <span class="plx-layer plx-l2"></span>
+  <aside class="plx-drawer" role="dialog" aria-modal="true" aria-labelledby="plx-title">
+    <h2 id="plx-title">Título</h2><p>Conteúdo do painel.</p>
+  </aside>
+</div>
+*/
+.plx-backdrop {
+  --w: min(320px, 76%);
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: rgb(0 0 0 / 0.5);
+  animation: plx-fade 0.3s ease both;
+}
+
+/* camadas de trás chegam antes e mais rápido; o conteúdo chega por último */
+.plx-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  animation: plx-in 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.plx-l1 { width: calc(var(--w) + 28px); background: rgb(139 92 246 / 0.3); }
+.plx-l2 { width: calc(var(--w) + 14px); background: rgb(139 92 246 / 0.55); animation-duration: 0.6s; animation-delay: 0.04s; }
+
+.plx-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--w);
+  padding: 24px;
+  background: #111113;
+  color: #fafafa;
+  font-size: 15px;
+  animation: plx-in 0.7s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.plx-drawer > * { animation: plx-content 0.8s 0.14s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.plx-drawer > p { animation-duration: 0.9s; animation-delay: 0.2s; }
+.plx-drawer h2 { margin: 0 0 8px; font-size: 20px; }
+.plx-drawer p { margin: 0; color: #a1a1aa; }
+
+@keyframes plx-fade { from { opacity: 0; } }
+@keyframes plx-in { from { transform: translateX(100%); } }
+@keyframes plx-content { from { transform: translateX(140px); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .plx-backdrop, .plx-layer, .plx-drawer, .plx-drawer > * { animation: none; }
+}

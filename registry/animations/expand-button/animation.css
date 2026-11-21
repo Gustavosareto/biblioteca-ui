@@ -1,0 +1,48 @@
+/* Uso:
+<button class="expand-button">
+  <svg>...ícone...</svg>
+  <span class="expand-button__label">Download</span>
+</button>
+*/
+.expand-button {
+  display: inline-flex;
+  align-items: center;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #ffffff33;
+  border-radius: 999px;
+  background: #111113;
+  color: #fff;
+  font: 500 15px/1 system-ui, sans-serif;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.expand-button svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.expand-button__label {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 0;
+  transition: max-width 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), margin 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.25s ease;
+}
+
+.expand-button:hover,
+.expand-button:focus-visible { background: #8b3dff; }
+.expand-button:hover .expand-button__label,
+.expand-button:focus-visible .expand-button__label { max-width: 120px; margin-left: 8px; opacity: 1; }
+.expand-button:active { transform: scale(0.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  .expand-button, .expand-button__label { transition: none; }
+}

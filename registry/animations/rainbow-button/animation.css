@@ -1,0 +1,40 @@
+/* Uso: <button class="rainbow-button">Ver no GitHub</button> */
+.rainbow-button {
+  --rainbow: linear-gradient(90deg, #ff3d8b, #ffb03d, #3dff8b, #3db0ff, #8b3dff, #ff3d8b);
+  position: relative;
+  isolation: isolate;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background:
+    linear-gradient(#121214, #121214) padding-box,
+    var(--rainbow) 0 0 / 200% 100% border-box;
+  color: #fff;
+  font: 600 15px system-ui, sans-serif;
+  cursor: pointer;
+  animation: rainbow-button 2s linear infinite;
+}
+.rainbow-button::before {
+  content: "";
+  position: absolute;
+  right: 15%;
+  bottom: -20%;
+  left: 15%;
+  z-index: -1;
+  height: 30%;
+  background: var(--rainbow) 0 0 / 200% 100%;
+  filter: blur(12px);
+  animation: rainbow-button-glow 2s linear infinite;
+}
+.rainbow-button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+@keyframes rainbow-button {
+  to { background-position: 0 0, 200% 0; }
+}
+@keyframes rainbow-button-glow {
+  to { background-position: 200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rainbow-button, .rainbow-button::before { animation: none; }
+}

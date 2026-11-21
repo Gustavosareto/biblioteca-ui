@@ -1,0 +1,26 @@
+/* Uso: <div class="gradient-border">Conteúdo</div> */
+@property --gradient-border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.gradient-border {
+  padding: 24px 28px;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  background:
+    linear-gradient(#111113, #111113) padding-box,
+    conic-gradient(from var(--gradient-border-angle), #8b3dff, #22d3ee, #f472b6, #8b3dff) border-box;
+  color: #fafafa;
+  font-size: 16px;
+  animation: gradient-border 4s linear infinite;
+}
+
+@keyframes gradient-border {
+  to { --gradient-border-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-border { animation: none; }
+}

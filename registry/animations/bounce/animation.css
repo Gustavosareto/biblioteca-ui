@@ -1,0 +1,16 @@
+/* Uso: <div class="bounce">Conteúdo</div> */
+.bounce {
+  transform-origin: bottom center;
+  animation: bounce 1s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  15% { transform: translateY(0) scale(1.1, 0.9); }
+  50% { transform: translateY(-40px) scale(0.95, 1.05); }
+  85% { transform: translateY(0) scale(1.05, 0.95); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bounce { animation: none; }
+}

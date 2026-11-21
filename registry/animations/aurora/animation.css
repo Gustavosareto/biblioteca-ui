@@ -1,0 +1,36 @@
+/* Uso: <div class="aurora">Conteúdo</div> */
+.aurora {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #0a0a0b;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.aurora::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 30% 30%, #8b3dff, transparent 40%),
+    radial-gradient(circle at 70% 60%, #22d3ee, transparent 35%),
+    radial-gradient(circle at 40% 80%, #f472b6, transparent 35%);
+  filter: blur(30px);
+  animation: aurora 10s linear infinite;
+}
+
+@keyframes aurora {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora::before { animation: none; }
+}

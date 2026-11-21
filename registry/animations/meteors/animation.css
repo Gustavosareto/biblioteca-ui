@@ -1,0 +1,52 @@
+/* Uso:
+<div class="meteors">
+  <span class="meteors__meteor" style="left:10%;animation-delay:.4s;animation-duration:2.6s"></span>
+  ... (repita com left/delay diferentes)
+  Conteúdo
+</div>
+*/
+.meteors {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #0a0a0b;
+  color: #fff;
+  font: 600 22px system-ui, sans-serif;
+}
+
+.meteors__meteor {
+  position: absolute;
+  top: -10px;
+  z-index: -1;
+  width: 2px;
+  height: 2px;
+  border-radius: 999px;
+  background: #e4e4e7;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1);
+  opacity: 0;
+  animation: meteors 3s linear infinite;
+}
+.meteors__meteor::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 1px;
+  transform: translateY(-50%);
+  background: linear-gradient(90deg, #a1a1aa, transparent);
+}
+
+@keyframes meteors {
+  0% { transform: rotate(215deg) translateX(0); opacity: 1; }
+  70% { opacity: 1; }
+  100% { transform: rotate(215deg) translateX(-420px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meteors__meteor { animation: none; }
+}

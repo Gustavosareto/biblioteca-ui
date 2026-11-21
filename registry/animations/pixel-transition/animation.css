@@ -1,0 +1,64 @@
+/* Uso:
+<div class="pixel-transition">
+  <div class="pixel-transition__front">Passe o mouse</div>
+  <div class="pixel-transition__back">Olá!</div>
+  <div class="pixel-transition__grid">
+    64 × <span style="animation-delay:Xms"></span>  (X entre 0 e 315, embaralhado)
+  </div>
+</div>
+*/
+.pixel-transition {
+  position: relative;
+  display: grid;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 16px;
+  color: #fff;
+  font: 600 18px system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.pixel-transition__front,
+.pixel-transition__back {
+  display: grid;
+  grid-area: 1 / 1;
+  place-items: center;
+}
+.pixel-transition__front { background: #18181b; }
+/* troca o conteúdo no instante em que todos os pixels estão cobrindo (0.38s) */
+.pixel-transition__back {
+  background: linear-gradient(135deg, #8b3dff, #22d3ee);
+  opacity: 0;
+  transition: opacity 0s 0.38s;
+}
+.pixel-transition:hover .pixel-transition__back { opacity: 1; }
+
+.pixel-transition__grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  pointer-events: none;
+}
+.pixel-transition__grid span {
+  background: #fff;
+  opacity: 0;
+  animation: pixel-transition-out 0.7s linear both;
+}
+/* nome diferente no hover faz a animação rodar de novo ao entrar e ao sair */
+.pixel-transition:hover .pixel-transition__grid span { animation-name: pixel-transition-in; }
+
+@keyframes pixel-transition-in {
+  0%, 9%, 56%, 100% { opacity: 0; }
+  10%, 55% { opacity: 1; }
+}
+@keyframes pixel-transition-out {
+  0%, 9%, 56%, 100% { opacity: 0; }
+  10%, 55% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pixel-transition__grid { display: none; }
+  .pixel-transition__back { transition: opacity 0.2s; }
+}

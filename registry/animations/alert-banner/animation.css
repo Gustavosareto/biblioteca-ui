@@ -1,0 +1,80 @@
+/* Uso:
+<div class="alert-banner">
+  <div class="alert-banner__inner">
+    <div class="alert-banner__box" role="status">
+      <svg>ícone</svg>
+      <p><strong>Nova versão</strong> disponível.</p>
+      <label class="alert-banner__close"><input type="checkbox" aria-label="Fechar aviso" />×</label>
+    </div>
+  </div>
+</div>
+*/
+.alert-banner {
+  display: grid;
+  grid-template-rows: 1fr;
+  width: 340px;
+  max-width: 100%;
+  font: 14px/1.4 system-ui, sans-serif;
+  transition: grid-template-rows 0.4s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.3s ease;
+}
+.alert-banner:has(input:checked) { grid-template-rows: 0fr; opacity: 0; }
+
+.alert-banner__inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.alert-banner__box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 12px 12px 16px;
+  border: 1px solid #8b3dff59;
+  border-radius: 12px;
+  background: #8b3dff1f;
+  color: #fafafa;
+  animation: alert-banner-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.alert-banner__box p { flex: 1; margin: 0; }
+
+.alert-banner svg {
+  flex: none;
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: #c4b5fd;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.alert-banner__close {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  color: #a1a1aa;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+.alert-banner__close:hover { background: #ffffff14; color: #fff; }
+.alert-banner__close:has(input:focus-visible) { outline: 2px solid #fff; }
+
+.alert-banner__close input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+@keyframes alert-banner-in {
+  from { opacity: 0; transform: translateY(-110%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .alert-banner, .alert-banner__box { transition: none; animation: none; }
+}

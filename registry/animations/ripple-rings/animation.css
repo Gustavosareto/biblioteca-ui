@@ -1,0 +1,45 @@
+/* Uso:
+<div class="ripple-rings">
+  <span class="ripple-rings__ring" style="--i:0"></span>
+  <span class="ripple-rings__ring" style="--i:1"></span>
+  ... até --i:4
+  Conteúdo
+</div>
+*/
+.ripple-rings {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 320px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #0a0a0b;
+  color: #fff;
+  font: 600 18px system-ui, sans-serif;
+}
+
+.ripple-rings__ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: calc(80px + var(--i) * 60px);
+  aspect-ratio: 1;
+  border: 1px solid rgb(139 61 255 / calc(0.5 - var(--i) * 0.08));
+  border-radius: 50%;
+  background: rgb(139 61 255 / calc(0.18 - var(--i) * 0.03));
+  translate: -50% -50%;
+  animation: ripple-rings 2.4s ease infinite;
+  animation-delay: calc(var(--i) * 0.12s);
+}
+
+@keyframes ripple-rings {
+  0%, 100% { scale: 1; }
+  50% { scale: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple-rings__ring { animation: none; }
+}

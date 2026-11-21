@@ -1,0 +1,62 @@
+/* Uso:
+<div class="dock-menu" role="radiogroup">
+  <label><input type="radio" name="dock" checked /><svg>...</svg><span>Início</span></label>
+  <label><input type="radio" name="dock" /><svg>...</svg><span>Buscar</span></label>
+</div>
+*/
+.dock-menu {
+  display: inline-flex;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid #ffffff14;
+  border-radius: 999px;
+  background: #19191c;
+  font: 500 14px/1 system-ui, sans-serif;
+}
+
+.dock-menu label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 11px;
+  border-radius: 999px;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: background 0.35s ease, color 0.35s ease;
+}
+
+.dock-menu label:hover { color: #fff; }
+.dock-menu label:has(input:checked) { background: #8b3dff; color: #fff; }
+.dock-menu label:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: 2px; }
+
+.dock-menu input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dock-menu svg {
+  flex: none;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.dock-menu label > span {
+  max-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: max-width 0.4s cubic-bezier(0.3, 1.2, 0.5, 1), margin 0.4s cubic-bezier(0.3, 1.2, 0.5, 1);
+}
+.dock-menu label:has(input:checked) > span { max-width: 80px; margin-left: 8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .dock-menu label, .dock-menu label > span { transition: none; }
+}

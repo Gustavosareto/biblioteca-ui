@@ -1,0 +1,63 @@
+/* Uso:
+<label class="like-heart">
+  <input type="checkbox" aria-label="Curtir" />
+  <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg>
+</label>
+*/
+.like-heart {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  color: #a1a1aa;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.like-heart:has(input:checked) { color: #f43f5e; }
+
+.like-heart input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.like-heart svg {
+  width: 56px;
+  height: 56px;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  pointer-events: none;
+  transition: fill 0.2s ease;
+}
+.like-heart input:checked + svg {
+  fill: currentColor;
+  animation: like-heart-pop 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.like-heart input:focus-visible + svg { outline: 2px solid #8b3dff; outline-offset: 4px; border-radius: 8px; }
+
+.like-heart::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 3px solid #f43f5e;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+.like-heart:has(input:checked)::after { animation: like-heart-ring 0.5s ease-out; }
+
+@keyframes like-heart-pop {
+  0% { transform: scale(0.5); }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+@keyframes like-heart-ring {
+  from { opacity: 1; transform: scale(0.4); }
+  to { opacity: 0; transform: scale(1.4); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .like-heart input:checked + svg, .like-heart:has(input:checked)::after { animation: none; }
+}

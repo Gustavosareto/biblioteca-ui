@@ -1,0 +1,38 @@
+/* Uso: <button class="shine-button">Button →</button> */
+.shine-button {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgb(255 255 255 / 0.25);
+  border-radius: 12px;
+  background: #000;
+  color: #fff;
+  font: 500 15px/1 system-ui, sans-serif;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, border-color 0.2s ease;
+}
+
+.shine-button::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.35), transparent);
+  transform: translateX(-120%) skewX(-20deg);
+  animation: shine-sweep 2.8s ease-in-out infinite;
+}
+
+.shine-button:hover { border-color: rgb(255 255 255 / 0.5); }
+.shine-button:active { transform: scale(0.97); }
+
+@keyframes shine-sweep {
+  0% { transform: translateX(-120%) skewX(-20deg); }
+  60%, 100% { transform: translateX(320%) skewX(-20deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shine-button::after { animation: none; }
+}

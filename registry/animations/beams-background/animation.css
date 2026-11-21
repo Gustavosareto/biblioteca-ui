@@ -1,0 +1,47 @@
+/* Uso:
+<div class="beams-background">
+  <span class="beams-background__beam" style="--i: 0"></span> ... (6 feixes)
+  <div class="beams-background__content">Conteúdo</div>
+</div>
+*/
+.beams-background {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 340px;
+  max-width: 100%;
+  height: 210px;
+  overflow: hidden;
+  border: 1px solid #ffffff14;
+  border-radius: 20px;
+  background: radial-gradient(ellipse at 50% 120%, #8b3dff40, transparent 60%), #050507;
+}
+
+.beams-background__beam {
+  position: absolute;
+  top: 0;
+  left: calc(var(--i) * 17% - 10%);
+  width: 2px;
+  height: 120px;
+  border-radius: 2px;
+  background: linear-gradient(transparent, #c4b5fd, #fff);
+  opacity: 0;
+  animation: beams-background calc(2.4s + var(--i) * 0.35s) linear infinite;
+  animation-delay: calc(var(--i) * -0.9s);
+}
+
+.beams-background__content {
+  position: relative;
+  color: #fafafa;
+  font: 600 22px/1.2 system-ui, sans-serif;
+}
+
+@keyframes beams-background {
+  0% { opacity: 0; transform: rotate(-35deg) translateY(-160px); }
+  15%, 70% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(-35deg) translateY(380px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .beams-background__beam { animation: none; }
+}

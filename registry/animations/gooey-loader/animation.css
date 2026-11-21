@@ -1,0 +1,26 @@
+/* Uso: inclua o <svg> com o filtro #gooey-loader (ver Animation.tsx) + 3 <span> dentro de .gooey-loader */
+.gooey-loader {
+  position: relative;
+  width: 140px;
+  height: 60px;
+  filter: url(#gooey-loader);
+}
+
+.gooey-loader span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin: -12px;
+  border-radius: 50%;
+  background: #8b3dff;
+  animation: gooey 1.8s ease-in-out infinite;
+}
+.gooey-loader span:nth-of-type(1) { width: 30px; height: 30px; margin: -15px; animation: none; }
+.gooey-loader span:nth-of-type(3) { animation-direction: reverse; background: #a78bfa; }
+
+@keyframes gooey {
+  0%, 100% { translate: -48px; }
+  50% { translate: 48px; }
+}

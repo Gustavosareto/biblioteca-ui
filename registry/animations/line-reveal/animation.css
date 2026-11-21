@@ -1,0 +1,32 @@
+/* Uso:
+<p class="line-reveal">
+  <span class="line-reveal__line"><span style="--i: 0">Anime cada</span></span>
+  <span class="line-reveal__line"><span style="--i: 1">linha do seu</span></span> ...
+</p>
+*/
+.line-reveal {
+  margin: 0;
+  color: #fafafa;
+  font: 700 34px/1.1 system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.line-reveal__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.line-reveal__line > span {
+  display: block;
+  animation: line-reveal 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes line-reveal {
+  from { transform: translateY(110%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-reveal__line > span { animation: none; }
+}

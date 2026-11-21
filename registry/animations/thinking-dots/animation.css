@@ -1,0 +1,26 @@
+/* Uso: <span class="thinking-dots" role="status">Pensando<span aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></span> */
+.thinking-dots {
+  font: 500 1.25rem system-ui, sans-serif;
+  background: linear-gradient(90deg, currentColor 40%, #8b3dff 50%, currentColor 60%) 0 0 / 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: thinking-shimmer 2.4s linear infinite;
+}
+
+.thinking-dots span span {
+  opacity: 0;
+  animation: thinking-dot 1.4s infinite;
+}
+.thinking-dots span span:nth-child(2) { animation-delay: 0.2s; }
+.thinking-dots span span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes thinking-dot {
+  0%, 100% { opacity: 0; }
+  30%, 60% { opacity: 1; }
+}
+
+@keyframes thinking-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: -50% 0; }
+}

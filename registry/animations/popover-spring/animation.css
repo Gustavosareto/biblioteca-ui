@@ -1,0 +1,67 @@
+/* Uso:
+<details class="popover-spring">
+  <summary>Detalhes</summary>
+  <div class="popover-spring__panel"><strong>Título</strong><p>Texto do popover.</p></div>
+</details>
+*/
+.popover-spring {
+  position: relative;
+  display: inline-block;
+  font: 500 15px/1.4 system-ui, sans-serif;
+  color: #fafafa;
+}
+
+.popover-spring summary {
+  padding: 0.75rem 1.2rem;
+  border: 1px solid #ffffff26;
+  border-radius: 12px;
+  background: #111113;
+  list-style: none;
+  cursor: pointer;
+}
+.popover-spring summary::-webkit-details-marker { display: none; }
+.popover-spring summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.popover-spring__panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  z-index: 10;
+  width: 240px;
+  padding: 14px 16px;
+  border: 1px solid #ffffff1f;
+  border-radius: 14px;
+  background: #19191c;
+  box-shadow: 0 16px 40px #0008;
+  transform: translateX(-50%);
+  transform-origin: top center;
+  animation: popover-spring 0.45s cubic-bezier(0.3, 1.5, 0.5, 1) both;
+}
+
+.popover-spring__panel::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #ffffff1f;
+  border-left: 1px solid #ffffff1f;
+  background: #19191c;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.popover-spring__panel p {
+  margin: 4px 0 0;
+  color: #a1a1aa;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@keyframes popover-spring {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px) scale(0.6); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popover-spring__panel { animation: none; }
+}

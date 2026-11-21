@@ -1,0 +1,1348 @@
+[
+  {
+    "slug": "alert-banner",
+    "name": "Alert Banner",
+    "category": "notificacoes",
+    "description": "Aviso que desce do topo e recolhe suavemente ao fechar.",
+    "tags": [
+      "alerta",
+      "banner",
+      "aviso",
+      "fechar",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:15:09.286Z"
+  },
+  {
+    "slug": "animated-grid",
+    "name": "Animated Grid",
+    "category": "avancado",
+    "description": "Grade sutil com células que acendem e apagam em sequência.",
+    "tags": [
+      "fundo",
+      "grade",
+      "células",
+      "padrão",
+      "loop"
+    ],
+    "added": "2026-11-21T11:18:46.782Z"
+  },
+  {
+    "slug": "arrow-slide",
+    "name": "Arrow Slide",
+    "category": "icones-animados",
+    "description": "Seta que sai pela direita e volta pela esquerda no hover.",
+    "tags": [
+      "ícone",
+      "seta",
+      "hover",
+      "botão"
+    ],
+    "added": "2026-11-20T17:02:37.166Z"
+  },
+  {
+    "slug": "aurora",
+    "name": "Aurora",
+    "category": "avancado",
+    "description": "Fundo com manchas de cor desfocadas girando como aurora.",
+    "tags": [
+      "fundo",
+      "gradiente",
+      "blur",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.698Z"
+  },
+  {
+    "slug": "badge-ping",
+    "name": "Badge Ping",
+    "category": "notificacoes",
+    "description": "Indicador de nova notificação emitindo ondas.",
+    "tags": [
+      "badge",
+      "ping",
+      "notificação",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.680Z"
+  },
+  {
+    "slug": "bars-loader",
+    "name": "Bars Loader",
+    "category": "carregamentos",
+    "description": "Barras subindo e descendo como um equalizador.",
+    "tags": [
+      "loader",
+      "barras",
+      "equalizador",
+      "loop"
+    ],
+    "added": "2026-11-20T17:02:37.138Z"
+  },
+  {
+    "slug": "beams-background",
+    "name": "Beams Background",
+    "category": "avancado",
+    "description": "Fundo escuro com feixes de luz cruzando na diagonal.",
+    "tags": [
+      "fundo",
+      "beams",
+      "luz",
+      "hero",
+      "loop"
+    ],
+    "added": "2026-11-20T17:02:37.146Z"
+  },
+  {
+    "slug": "bell-ring",
+    "name": "Bell Ring",
+    "category": "icones-animados",
+    "description": "Sino que balança de tempos em tempos.",
+    "tags": [
+      "ícone",
+      "sino",
+      "notificação",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.670Z"
+  },
+  {
+    "slug": "blur-in",
+    "name": "Blur In",
+    "category": "transicoes",
+    "description": "Entra saindo do desfoque com leve zoom.",
+    "tags": [
+      "blur",
+      "entrada",
+      "zoom"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:29:06.850Z"
+  },
+  {
+    "slug": "blur-words",
+    "name": "Blur Words",
+    "category": "efeitos-de-texto",
+    "description": "Palavras surgem do desfoque, uma de cada vez.",
+    "tags": [
+      "texto",
+      "blur",
+      "palavras",
+      "entrada",
+      "loop"
+    ],
+    "added": "2026-11-20T17:02:37.119Z"
+  },
+  {
+    "slug": "border-beam",
+    "name": "Border Beam",
+    "category": "componentes",
+    "description": "Feixe de luz que percorre a borda do card.",
+    "tags": [
+      "card",
+      "borda",
+      "beam",
+      "luz",
+      "loop"
+    ],
+    "added": "2026-11-20T17:02:37.126Z"
+  },
+  {
+    "slug": "bottom-sheet",
+    "name": "Bottom Sheet",
+    "category": "modais-overlays",
+    "description": "Folha que sobe da base com alça, estilo mobile.",
+    "tags": [
+      "sheet",
+      "mobile",
+      "overlay",
+      "mola"
+    ],
+    "added": "2026-11-20T16:43:43.687Z"
+  },
+  {
+    "slug": "bounce",
+    "name": "Bounce",
+    "category": "animacoes",
+    "description": "Quica com squash & stretch, em loop.",
+    "tags": [
+      "bounce",
+      "loop",
+      "atenção"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:27:48.873Z"
+  },
+  {
+    "slug": "bubble-background",
+    "name": "Bubble Background",
+    "category": "avancado",
+    "description": "Bolhas de cor desfocadas que flutuam e se misturam ao fundo.",
+    "tags": [
+      "fundo",
+      "bolhas",
+      "gradiente",
+      "blur",
+      "loop"
+    ],
+    "added": "2026-11-21T11:18:51.002Z"
+  },
+  {
+    "slug": "bubble-menu",
+    "name": "Bubble Menu",
+    "category": "menus-navegacao",
+    "description": "Botão + que gira e abre os links em bolhas com efeito de mola.",
+    "tags": [
+      "menu",
+      "bolhas",
+      "mola",
+      "cascata",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:22:30.552Z"
+  },
+  {
+    "slug": "card-fan",
+    "name": "Card Fan",
+    "category": "componentes",
+    "description": "Pilha de cartas que se abre em leque ao passar o mouse.",
+    "tags": [
+      "cards",
+      "leque",
+      "hover",
+      "pilha",
+      "mola"
+    ],
+    "added": "2026-11-20T17:22:16.136Z"
+  },
+  {
+    "slug": "checkbox-draw",
+    "name": "Checkbox Draw",
+    "category": "microinteracoes",
+    "description": "Checkbox que desenha o check e risca o texto.",
+    "tags": [
+      "checkbox",
+      "check",
+      "tarefa",
+      "interativo"
+    ],
+    "added": "2026-11-20T16:43:43.641Z"
+  },
+  {
+    "slug": "circular-progress",
+    "name": "Circular Progress",
+    "category": "carregamentos",
+    "description": "Anel de progresso que enche com a porcentagem contando junto.",
+    "tags": [
+      "progresso",
+      "círculo",
+      "porcentagem",
+      "contador",
+      "loop"
+    ],
+    "added": "2026-11-20T17:22:02.462Z"
+  },
+  {
+    "slug": "clip-reveal",
+    "name": "Clip Reveal",
+    "category": "transicoes",
+    "description": "Revela o elemento com uma cortina da esquerda para a direita.",
+    "tags": [
+      "clip-path",
+      "revelar",
+      "entrada",
+      "cortina"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T17:02:37.169Z"
+  },
+  {
+    "slug": "command-palette",
+    "name": "Command Palette",
+    "category": "modais-overlays",
+    "description": "Paleta de comandos que desce sobre o fundo desfocado, com itens em cascata.",
+    "tags": [
+      "comando",
+      "busca",
+      "overlay",
+      "cmd+k",
+      "cascata"
+    ],
+    "added": "2026-11-20T17:15:09.279Z"
+  },
+  {
+    "slug": "copy-check",
+    "name": "Copy Check",
+    "category": "icones-animados",
+    "description": "Ícone de copiar que vira um check desenhado ao clicar.",
+    "tags": [
+      "ícone",
+      "copiar",
+      "check",
+      "clipboard",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:15:09.308Z"
+  },
+  {
+    "slug": "counter-badge",
+    "name": "Counter Badge",
+    "category": "notificacoes",
+    "description": "Contador de notificações que rola para o próximo número com um pop.",
+    "tags": [
+      "badge",
+      "contador",
+      "número",
+      "notificação",
+      "loop"
+    ],
+    "added": "2026-11-20T17:15:09.290Z"
+  },
+  {
+    "slug": "dock-menu",
+    "name": "Dock Menu",
+    "category": "menus-navegacao",
+    "description": "Barra de ícones em que o item ativo se expande com o nome.",
+    "tags": [
+      "menu",
+      "barra",
+      "ícones",
+      "ativo",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:02:37.152Z"
+  },
+  {
+    "slug": "dot-fill-button",
+    "name": "Dot Fill Button",
+    "category": "componentes",
+    "description": "Ponto que se expande e preenche o botão no hover.",
+    "tags": [
+      "botão",
+      "hover",
+      "preencher",
+      "cta"
+    ],
+    "added": "2026-11-20T17:02:37.130Z"
+  },
+  {
+    "slug": "dots-bounce",
+    "name": "Dots Bounce",
+    "category": "carregamentos",
+    "description": "Três pontos quicando em sequência.",
+    "tags": [
+      "loader",
+      "pontos",
+      "loop",
+      "digitando"
+    ],
+    "added": "2026-11-20T16:43:43.645Z"
+  },
+  {
+    "slug": "drawer-elastic-edge",
+    "name": "Drawer Elastic Edge",
+    "category": "modais-overlays",
+    "description": "Painel lateral com borda elástica que estufa e balança ao parar.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "elástico",
+      "mola"
+    ],
+    "added": "2026-11-21T11:14:37.967Z"
+  },
+  {
+    "slug": "drawer-folding-screen",
+    "name": "Drawer Folding Screen",
+    "category": "modais-overlays",
+    "description": "Painel lateral que se desdobra em gomos 3D, como um biombo.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "3d",
+      "dobra"
+    ],
+    "added": "2026-11-21T11:14:42.153Z"
+  },
+  {
+    "slug": "drawer-frosted-glass",
+    "name": "Drawer Frosted Glass",
+    "category": "modais-overlays",
+    "description": "Painel de vidro fosco que desliza enquanto o fundo desfoca.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "vidro",
+      "blur",
+      "glass"
+    ],
+    "added": "2026-11-21T11:14:46.273Z"
+  },
+  {
+    "slug": "drawer-parallax-layers",
+    "name": "Drawer Parallax Layers",
+    "category": "modais-overlays",
+    "description": "Painel lateral em camadas que entram em velocidades diferentes.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "parallax",
+      "camadas"
+    ],
+    "added": "2026-11-21T11:14:54.862Z"
+  },
+  {
+    "slug": "drawer-push-aside",
+    "name": "Drawer Push Aside",
+    "category": "modais-overlays",
+    "description": "Painel lateral que empurra e recua a página enquanto entra.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "empurrar",
+      "profundidade"
+    ],
+    "added": "2026-11-21T11:14:34.141Z"
+  },
+  {
+    "slug": "drawer-slide",
+    "name": "Drawer Slide",
+    "category": "modais-overlays",
+    "description": "Painel lateral que desliza da direita sobre o fundo.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "overlay"
+    ],
+    "added": "2026-11-20T16:43:43.683Z"
+  },
+  {
+    "slug": "drawer-speed-skew",
+    "name": "Drawer Speed Skew",
+    "category": "modais-overlays",
+    "description": "Painel lateral que entra inclinado pela velocidade e endireita ao frear.",
+    "tags": [
+      "drawer",
+      "painel",
+      "lateral",
+      "skew",
+      "velocidade"
+    ],
+    "added": "2026-11-21T11:14:50.493Z"
+  },
+  {
+    "slug": "dropdown-stagger",
+    "name": "Dropdown Stagger",
+    "category": "menus-navegacao",
+    "description": "Menu suspenso que abre do topo com itens em cascata.",
+    "tags": [
+      "dropdown",
+      "menu",
+      "cascata",
+      "details",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:02:37.156Z"
+  },
+  {
+    "slug": "dynamic-island",
+    "name": "Dynamic Island",
+    "category": "notificacoes",
+    "description": "Pílula preta que se expande para mostrar uma notificação e recolhe.",
+    "tags": [
+      "notificação",
+      "pílula",
+      "expandir",
+      "ios",
+      "loop"
+    ],
+    "added": "2026-11-20T17:22:23.340Z"
+  },
+  {
+    "slug": "expand-button",
+    "name": "Expand Button",
+    "category": "microinteracoes",
+    "description": "Botão de ícone que se estica revelando o texto no hover.",
+    "tags": [
+      "botão",
+      "ícone",
+      "hover",
+      "download",
+      "expandir"
+    ],
+    "added": "2026-11-20T17:02:37.149Z"
+  },
+  {
+    "slug": "fade-in-up",
+    "name": "Fade In Up",
+    "category": "animacoes",
+    "description": "Surge de baixo para cima com fade suave.",
+    "tags": [
+      "fade",
+      "entrada",
+      "slide"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:27:44.723Z"
+  },
+  {
+    "slug": "flip-button",
+    "name": "Flip Button",
+    "category": "microinteracoes",
+    "description": "Botão que gira em 3D e revela o verso com outro texto no hover.",
+    "tags": [
+      "botão",
+      "3d",
+      "flip",
+      "hover",
+      "cta"
+    ],
+    "added": "2026-11-21T11:19:02.113Z"
+  },
+  {
+    "slug": "flip-in",
+    "name": "Flip In",
+    "category": "transicoes",
+    "description": "Entra girando em 3D a partir do topo.",
+    "tags": [
+      "flip",
+      "3d",
+      "entrada",
+      "perspectiva"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:39:35.432Z"
+  },
+  {
+    "slug": "float",
+    "name": "Float",
+    "category": "animacoes",
+    "description": "Flutua para cima e para baixo, como se estivesse levitando.",
+    "tags": [
+      "float",
+      "flutuar",
+      "loop",
+      "hero"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:39:34.817Z"
+  },
+  {
+    "slug": "gallery-expand",
+    "name": "Gallery Expand",
+    "category": "componentes",
+    "description": "Galeria em faixas: o painel sob o mouse se expande com mola.",
+    "tags": [
+      "galeria",
+      "hover",
+      "acordeão",
+      "imagens",
+      "flex"
+    ],
+    "added": "2026-11-21T11:19:24.577Z"
+  },
+  {
+    "slug": "glare-hover",
+    "name": "Glare Hover",
+    "category": "microinteracoes",
+    "description": "Reflexo de luz que atravessa o card na diagonal ao passar o mouse.",
+    "tags": [
+      "card",
+      "hover",
+      "brilho",
+      "reflexo",
+      "vidro"
+    ],
+    "added": "2026-11-21T11:18:56.049Z"
+  },
+  {
+    "slug": "glitch-text",
+    "name": "Glitch Text",
+    "category": "efeitos-de-texto",
+    "description": "Texto com falhas digitais em ciano e rosa.",
+    "tags": [
+      "texto",
+      "glitch",
+      "cyberpunk",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.632Z"
+  },
+  {
+    "slug": "gooey-loader",
+    "name": "Gooey Loader",
+    "category": "carregamentos",
+    "description": "Bolinhas que se fundem como líquido ao se cruzarem (filtro SVG gooey).",
+    "tags": [
+      "loader",
+      "gooey",
+      "líquido",
+      "svg",
+      "loop"
+    ],
+    "added": "2026-11-21T11:19:20.376Z"
+  },
+  {
+    "slug": "gradient-border",
+    "name": "Gradient Border",
+    "category": "componentes",
+    "description": "Card com borda em gradiente girando continuamente.",
+    "tags": [
+      "card",
+      "borda",
+      "gradiente",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.615Z"
+  },
+  {
+    "slug": "gradient-text",
+    "name": "Gradient Text",
+    "category": "efeitos-de-texto",
+    "description": "Texto com gradiente colorido deslizando.",
+    "tags": [
+      "texto",
+      "gradiente",
+      "cores",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.625Z"
+  },
+  {
+    "slug": "hamburger-to-x",
+    "name": "Hamburger to X",
+    "category": "menus-navegacao",
+    "description": "Ícone de menu que vira X ao clicar.",
+    "tags": [
+      "menu",
+      "hamburger",
+      "ícone",
+      "interativo"
+    ],
+    "added": "2026-11-20T16:30:44.731Z"
+  },
+  {
+    "slug": "heart-beat",
+    "name": "Heart Beat",
+    "category": "icones-animados",
+    "description": "Coração batendo em ritmo duplo.",
+    "tags": [
+      "ícone",
+      "coração",
+      "batida",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.674Z"
+  },
+  {
+    "slug": "hold-button",
+    "name": "Hold Button",
+    "category": "microinteracoes",
+    "description": "Botão que enche enquanto é segurado, para confirmar ações perigosas.",
+    "tags": [
+      "botão",
+      "segurar",
+      "confirmar",
+      "excluir",
+      "progresso"
+    ],
+    "added": "2026-11-20T17:15:09.321Z"
+  },
+  {
+    "slug": "infinity-loader",
+    "name": "Infinity Loader",
+    "category": "carregamentos",
+    "description": "Traço de luz correndo sobre um símbolo de infinito.",
+    "tags": [
+      "loader",
+      "infinito",
+      "svg",
+      "loop"
+    ],
+    "added": "2026-11-20T17:02:37.142Z"
+  },
+  {
+    "slug": "light-rays",
+    "name": "Light Rays",
+    "category": "avancado",
+    "description": "Feixes de luz caindo do topo, balançando e pulsando suavemente.",
+    "tags": [
+      "fundo",
+      "luz",
+      "raios",
+      "hero",
+      "loop"
+    ],
+    "added": "2026-11-21T11:18:42.419Z"
+  },
+  {
+    "slug": "like-heart",
+    "name": "Like Heart",
+    "category": "microinteracoes",
+    "description": "Coração que enche com pop e anel de explosão ao curtir.",
+    "tags": [
+      "like",
+      "coração",
+      "curtir",
+      "interativo"
+    ],
+    "added": "2026-11-20T16:43:43.637Z"
+  },
+  {
+    "slug": "line-reveal",
+    "name": "Line Reveal",
+    "category": "transicoes",
+    "description": "Linhas de texto sobem de trás de uma máscara, uma de cada vez.",
+    "tags": [
+      "texto",
+      "máscara",
+      "entrada",
+      "título",
+      "linhas"
+    ],
+    "added": "2026-11-20T17:15:09.317Z"
+  },
+  {
+    "slug": "line-shadow-text",
+    "name": "Line Shadow Text",
+    "category": "efeitos-de-texto",
+    "description": "Texto com sombra listrada em diagonal que desliza sem parar.",
+    "tags": [
+      "texto",
+      "sombra",
+      "listras",
+      "loop",
+      "título"
+    ],
+    "added": "2026-11-21T11:18:30.244Z"
+  },
+  {
+    "slug": "liquid-wave",
+    "name": "Liquid Wave",
+    "category": "carregamentos",
+    "description": "Círculo que enche e esvazia com ondas de líquido girando.",
+    "tags": [
+      "loader",
+      "onda",
+      "líquido",
+      "progresso",
+      "loop"
+    ],
+    "added": "2026-11-21T11:19:15.761Z"
+  },
+  {
+    "slug": "marker-highlight",
+    "name": "Marker Highlight",
+    "category": "efeitos-de-texto",
+    "description": "Marca-texto que risca a palavra da esquerda para a direita e some pelo outro lado.",
+    "tags": [
+      "texto",
+      "destaque",
+      "marca-texto",
+      "loop"
+    ],
+    "added": "2026-11-21T11:18:33.707Z"
+  },
+  {
+    "slug": "marquee",
+    "name": "Marquee",
+    "category": "animacoes",
+    "description": "Faixa de logos rolando sem fim, com bordas esmaecidas.",
+    "tags": [
+      "marquee",
+      "logos",
+      "carrossel",
+      "loop",
+      "infinito"
+    ],
+    "added": "2026-11-20T17:02:37.135Z"
+  },
+  {
+    "slug": "meteors",
+    "name": "Meteoros",
+    "category": "avancado",
+    "description": "Chuva de meteoros cruzando o fundo na diagonal.",
+    "tags": [
+      "fundo",
+      "meteoro",
+      "estrelas",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:19.454Z"
+  },
+  {
+    "slug": "modal-pop-in",
+    "name": "Modal Pop In",
+    "category": "modais-overlays",
+    "description": "Modal que surge com mola sobre fundo desfocado.",
+    "tags": [
+      "modal",
+      "overlay",
+      "dialog",
+      "mola"
+    ],
+    "added": "2026-11-20T16:30:38.244Z"
+  },
+  {
+    "slug": "multi-step-loader",
+    "name": "Multi Step Loader",
+    "category": "carregamentos",
+    "description": "Lista de etapas que vão sendo marcadas como concluídas uma a uma.",
+    "tags": [
+      "etapas",
+      "progresso",
+      "checklist",
+      "carregando",
+      "loop"
+    ],
+    "added": "2026-11-20T17:22:09.793Z"
+  },
+  {
+    "slug": "neon-flicker",
+    "name": "Neon Flicker",
+    "category": "efeitos-de-texto",
+    "description": "Texto neon com brilho e falhas de luz.",
+    "tags": [
+      "neon",
+      "glow",
+      "texto"
+    ],
+    "added": "2026-11-20T16:28:58.767Z"
+  },
+  {
+    "slug": "notification-stack",
+    "name": "Notification Stack",
+    "category": "notificacoes",
+    "description": "Pilha de notificações que se abre em leque no hover.",
+    "tags": [
+      "toast",
+      "pilha",
+      "notificação",
+      "hover",
+      "leque"
+    ],
+    "added": "2026-11-20T17:02:37.161Z"
+  },
+  {
+    "slug": "orbit",
+    "name": "Orbit",
+    "category": "avancado",
+    "description": "Planetas brilhantes orbitando um núcleo.",
+    "tags": [
+      "órbita",
+      "planetas",
+      "loader",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.703Z"
+  },
+  {
+    "slug": "pixel-transition",
+    "name": "Pixel Transition",
+    "category": "transicoes",
+    "description": "Grade de pixels cobre o card e revela outro conteúdo no hover.",
+    "tags": [
+      "pixel",
+      "hover",
+      "card",
+      "troca",
+      "revelar"
+    ],
+    "added": "2026-11-20T17:22:37.539Z"
+  },
+  {
+    "slug": "play-pause",
+    "name": "Play Pause",
+    "category": "icones-animados",
+    "description": "Triângulo de play que se transforma em pause ao clicar.",
+    "tags": [
+      "ícone",
+      "play",
+      "pause",
+      "morph",
+      "player",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:15:09.312Z"
+  },
+  {
+    "slug": "popover-spring",
+    "name": "Popover Spring",
+    "category": "modais-overlays",
+    "description": "Popover com seta que abre do botão com efeito de mola.",
+    "tags": [
+      "popover",
+      "mola",
+      "details",
+      "interativo",
+      "card"
+    ],
+    "added": "2026-11-20T17:15:09.283Z"
+  },
+  {
+    "slug": "press-button",
+    "name": "Press Button",
+    "category": "componentes",
+    "description": "Botão 3D que afunda ao ser pressionado.",
+    "tags": [
+      "botão",
+      "3d",
+      "press",
+      "clique"
+    ],
+    "added": "2026-11-20T16:43:43.611Z"
+  },
+  {
+    "slug": "progress-indeterminate",
+    "name": "Progress Indeterminate",
+    "category": "carregamentos",
+    "description": "Barra de progresso com segmento deslizando sem fim.",
+    "tags": [
+      "progresso",
+      "barra",
+      "loader",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.654Z"
+  },
+  {
+    "slug": "pulsating-button",
+    "name": "Pulsating Button",
+    "category": "microinteracoes",
+    "description": "Botão com um anel de luz pulsando ao redor para chamar atenção.",
+    "tags": [
+      "botão",
+      "pulso",
+      "cta",
+      "sombra",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:27.922Z"
+  },
+  {
+    "slug": "pulse",
+    "name": "Pulse",
+    "category": "animacoes",
+    "description": "Pulsa suavemente para chamar atenção, em loop.",
+    "tags": [
+      "pulse",
+      "loop",
+      "atenção",
+      "escala"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:39:34.331Z"
+  },
+  {
+    "slug": "rainbow-button",
+    "name": "Rainbow Button",
+    "category": "componentes",
+    "description": "Botão com borda e brilho de arco-íris correndo sem parar.",
+    "tags": [
+      "botão",
+      "arco-íris",
+      "gradiente",
+      "brilho",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:34.718Z"
+  },
+  {
+    "slug": "retro-grid",
+    "name": "Retro Grid",
+    "category": "avancado",
+    "description": "Chão em grade com perspectiva correndo em direção à tela.",
+    "tags": [
+      "fundo",
+      "grade",
+      "perspectiva",
+      "synthwave",
+      "loop"
+    ],
+    "added": "2026-11-20T17:15:09.302Z"
+  },
+  {
+    "slug": "ripple-button",
+    "name": "Ripple Button",
+    "category": "componentes",
+    "description": "Botão com onda de luz que se expande ao clicar.",
+    "tags": [
+      "botão",
+      "ripple",
+      "clique",
+      "material"
+    ],
+    "added": "2026-11-20T16:43:43.607Z"
+  },
+  {
+    "slug": "ripple-rings",
+    "name": "Anéis de Onda",
+    "category": "animacoes",
+    "description": "Círculos concêntricos pulsando em sequência a partir do centro.",
+    "tags": [
+      "ripple",
+      "ondas",
+      "círculos",
+      "fundo",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:22.776Z"
+  },
+  {
+    "slug": "scale-in",
+    "name": "Scale In",
+    "category": "transicoes",
+    "description": "Cresce do centro com leve efeito de mola.",
+    "tags": [
+      "scale",
+      "zoom",
+      "entrada",
+      "mola"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:39:36.072Z"
+  },
+  {
+    "slug": "shake",
+    "name": "Shake",
+    "category": "animacoes",
+    "description": "Tremida horizontal curta, ideal para erro de formulário.",
+    "tags": [
+      "shake",
+      "erro",
+      "atenção",
+      "tremer"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:39:34.564Z"
+  },
+  {
+    "slug": "shine-button",
+    "name": "Shine Button",
+    "category": "componentes",
+    "description": "Botão com reflexo de luz passando.",
+    "tags": [
+      "botão",
+      "brilho",
+      "hover"
+    ],
+    "added": "2026-11-20T16:28:53.416Z"
+  },
+  {
+    "slug": "skeleton",
+    "name": "Skeleton",
+    "category": "carregamentos",
+    "description": "Placeholder de conteúdo com brilho deslizante.",
+    "tags": [
+      "skeleton",
+      "placeholder",
+      "shimmer",
+      "loader"
+    ],
+    "added": "2026-11-20T16:43:43.649Z"
+  },
+  {
+    "slug": "slide-in-left",
+    "name": "Slide In Left",
+    "category": "transicoes",
+    "description": "Desliza da esquerda para o lugar com fade.",
+    "tags": [
+      "slide",
+      "entrada",
+      "esquerda",
+      "fade"
+    ],
+    "demo": "box",
+    "added": "2026-11-20T16:39:35.066Z"
+  },
+  {
+    "slug": "sparkles-text",
+    "name": "Sparkles Text",
+    "category": "efeitos-de-texto",
+    "description": "Texto com estrelinhas surgindo e girando ao redor.",
+    "tags": [
+      "texto",
+      "brilho",
+      "estrelas",
+      "destaque",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:47.076Z"
+  },
+  {
+    "slug": "spinner-ring",
+    "name": "Spinner Ring",
+    "category": "carregamentos",
+    "description": "Anel de carregamento girando.",
+    "tags": [
+      "spinner",
+      "loader",
+      "loop"
+    ],
+    "added": "2026-11-20T16:30:18.492Z"
+  },
+  {
+    "slug": "spinning-text",
+    "name": "Spinning Text",
+    "category": "efeitos-de-texto",
+    "description": "Texto disposto em círculo girando continuamente, estilo selo.",
+    "tags": [
+      "texto",
+      "círculo",
+      "girar",
+      "selo",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:55.561Z"
+  },
+  {
+    "slug": "squiggly-text",
+    "name": "Squiggly Text",
+    "category": "efeitos-de-texto",
+    "description": "Texto tremido como desenho animado, feito com filtros SVG de turbulência.",
+    "tags": [
+      "texto",
+      "svg",
+      "filtro",
+      "rabisco",
+      "loop"
+    ],
+    "added": "2026-11-21T11:18:38.055Z"
+  },
+  {
+    "slug": "stagger-list",
+    "name": "Stagger List",
+    "category": "transicoes",
+    "description": "Itens de lista entrando um após o outro.",
+    "tags": [
+      "lista",
+      "cascata",
+      "entrada",
+      "stagger"
+    ],
+    "added": "2026-11-20T17:15:09.315Z"
+  },
+  {
+    "slug": "star-pop",
+    "name": "Star Pop",
+    "category": "icones-animados",
+    "description": "Estrela que preenche com um pop ao clicar.",
+    "tags": [
+      "ícone",
+      "favorito",
+      "pop",
+      "interativo"
+    ],
+    "added": "2026-11-20T16:30:25.064Z"
+  },
+  {
+    "slug": "sun-moon",
+    "name": "Sun Moon",
+    "category": "icones-animados",
+    "description": "Sol que vira lua ao clicar, para alternar tema claro/escuro.",
+    "tags": [
+      "ícone",
+      "tema",
+      "dark mode",
+      "sol",
+      "lua",
+      "interativo"
+    ],
+    "added": "2026-11-20T17:15:09.311Z"
+  },
+  {
+    "slug": "tabs-slide",
+    "name": "Tabs Slide",
+    "category": "menus-navegacao",
+    "description": "Abas com pílula que desliza até a opção escolhida.",
+    "tags": [
+      "abas",
+      "tabs",
+      "segmentado",
+      "interativo"
+    ],
+    "added": "2026-11-20T16:43:43.695Z"
+  },
+  {
+    "slug": "text-roll",
+    "name": "Text Roll",
+    "category": "microinteracoes",
+    "description": "Letras rolam para cima no hover, uma após a outra.",
+    "tags": [
+      "texto",
+      "hover",
+      "roll",
+      "link",
+      "letras"
+    ],
+    "added": "2026-11-20T17:02:37.123Z"
+  },
+  {
+    "slug": "text-shimmer",
+    "name": "Text Shimmer",
+    "category": "efeitos-de-texto",
+    "description": "Brilho que percorre o texto, estilo IA pensando.",
+    "tags": [
+      "texto",
+      "shimmer",
+      "brilho",
+      "ia",
+      "loop"
+    ],
+    "added": "2026-11-20T17:02:37.115Z"
+  },
+  {
+    "slug": "thinking-dots",
+    "name": "Thinking Dots",
+    "category": "carregamentos",
+    "description": "Texto \"Pensando\" com reticências que aparecem uma a uma, estilo chat de IA.",
+    "tags": [
+      "loader",
+      "texto",
+      "pontos",
+      "chat",
+      "ia"
+    ],
+    "added": "2026-11-21T11:19:08.383Z"
+  },
+  {
+    "slug": "tilt-card",
+    "name": "Tilt Card",
+    "category": "avancado",
+    "description": "Card 3D que inclina seguindo o mouse, sem JavaScript.",
+    "tags": [
+      "3d",
+      "tilt",
+      "card",
+      "hover",
+      "perspectiva"
+    ],
+    "added": "2026-11-20T17:15:09.299Z"
+  },
+  {
+    "slug": "toast-slide-in",
+    "name": "Toast Slide In",
+    "category": "notificacoes",
+    "description": "Notificação que desliza para cima com barra de tempo.",
+    "tags": [
+      "toast",
+      "alerta",
+      "sucesso"
+    ],
+    "added": "2026-11-20T16:30:31.736Z"
+  },
+  {
+    "slug": "toggle-switch",
+    "name": "Toggle Switch",
+    "category": "microinteracoes",
+    "description": "Interruptor com mola e knob que estica ao pressionar.",
+    "tags": [
+      "toggle",
+      "switch",
+      "mola",
+      "interativo"
+    ],
+    "added": "2026-11-20T16:30:13.365Z"
+  },
+  {
+    "slug": "tooltip-pop",
+    "name": "Tooltip Pop",
+    "category": "modais-overlays",
+    "description": "Tooltip que salta do botão com mola no hover ou foco.",
+    "tags": [
+      "tooltip",
+      "hover",
+      "foco",
+      "mola",
+      "dica"
+    ],
+    "added": "2026-11-20T17:15:09.276Z"
+  },
+  {
+    "slug": "twinkle-stars",
+    "name": "Twinkle Stars",
+    "category": "avancado",
+    "description": "Céu de estrelas piscando em tempos diferentes.",
+    "tags": [
+      "fundo",
+      "estrelas",
+      "brilho",
+      "céu",
+      "loop"
+    ],
+    "added": "2026-11-20T17:15:09.304Z"
+  },
+  {
+    "slug": "typewriter",
+    "name": "Typewriter",
+    "category": "efeitos-de-texto",
+    "description": "Texto digitado letra a letra com cursor piscando.",
+    "tags": [
+      "texto",
+      "digitação",
+      "cursor",
+      "máquina de escrever"
+    ],
+    "added": "2026-11-20T16:43:43.621Z"
+  },
+  {
+    "slug": "underline-nav",
+    "name": "Underline Nav",
+    "category": "menus-navegacao",
+    "description": "Links com sublinhado que cresce da esquerda no hover.",
+    "tags": [
+      "menu",
+      "link",
+      "hover",
+      "sublinhado"
+    ],
+    "added": "2026-11-20T16:43:43.690Z"
+  },
+  {
+    "slug": "undo-snackbar",
+    "name": "Undo Snackbar",
+    "category": "notificacoes",
+    "description": "Snackbar com anel de contagem regressiva e botão de desfazer.",
+    "tags": [
+      "snackbar",
+      "desfazer",
+      "contagem",
+      "toast",
+      "timer"
+    ],
+    "added": "2026-11-20T17:15:09.294Z"
+  },
+  {
+    "slug": "wave-text",
+    "name": "Wave Text",
+    "category": "efeitos-de-texto",
+    "description": "Letras sobem e descem em onda, uma após a outra.",
+    "tags": [
+      "texto",
+      "onda",
+      "letras",
+      "loop"
+    ],
+    "added": "2026-11-20T16:43:43.628Z"
+  },
+  {
+    "slug": "word-rotate",
+    "name": "Word Rotate",
+    "category": "efeitos-de-texto",
+    "description": "Palavra que gira na vertical trocando entre três opções.",
+    "tags": [
+      "texto",
+      "palavras",
+      "rotação",
+      "título",
+      "loop"
+    ],
+    "added": "2026-11-20T17:21:40.950Z"
+  }
+]

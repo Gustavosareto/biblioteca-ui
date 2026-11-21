@@ -1,0 +1,57 @@
+/* Uso:
+<div class="dynamic-island" role="status">
+  <span class="dynamic-island__avatar"></span>
+  <span class="dynamic-island__text">Nova mensagem de Ana</span>
+</div>
+*/
+.dynamic-island {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 120px;
+  height: 36px;
+  padding: 0 14px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #000;
+  box-shadow: 0 0 0 1px #27272a;
+  color: #fff;
+  font: 500 14px system-ui, sans-serif;
+  white-space: nowrap;
+  animation: dynamic-island 4s cubic-bezier(0.3, 1.3, 0.5, 1) infinite;
+}
+
+.dynamic-island__avatar {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #8b3dff, #22d3ee);
+  scale: 0;
+  animation: dynamic-island-avatar 4s ease infinite;
+}
+
+.dynamic-island__text {
+  opacity: 0;
+  animation: dynamic-island-text 4s ease infinite;
+}
+
+@keyframes dynamic-island {
+  0%, 15%, 90%, 100% { width: 120px; height: 36px; }
+  25%, 80% { width: 260px; height: 56px; }
+}
+@keyframes dynamic-island-avatar {
+  0%, 20%, 85%, 100% { scale: 0; }
+  30%, 78% { scale: 1; }
+}
+@keyframes dynamic-island-text {
+  0%, 28%, 82%, 100% { opacity: 0; }
+  36%, 75% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dynamic-island, .dynamic-island__avatar, .dynamic-island__text { animation: none; }
+  .dynamic-island { width: 260px; height: 56px; }
+  .dynamic-island__avatar { scale: 1; }
+  .dynamic-island__text { opacity: 1; }
+}

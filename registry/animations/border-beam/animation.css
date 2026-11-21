@@ -1,0 +1,39 @@
+/* Uso: <div class="border-beam">Conteúdo</div> */
+@property --border-beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.border-beam {
+  position: relative;
+  width: 260px;
+  padding: 24px 28px;
+  border: 1px solid #ffffff1a;
+  border-radius: 16px;
+  background: #0b0b0d;
+  color: #fafafa;
+  font: 16px/1.5 system-ui, sans-serif;
+}
+
+.border-beam::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--border-beam-angle), transparent 0 72%, #8b3dff 86%, #fff 96%, transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: border-beam 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes border-beam {
+  to { --border-beam-angle: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .border-beam::before { animation: none; }
+}

@@ -1,0 +1,28 @@
+/* Uso:
+<svg class="infinity-loader" viewBox="0 0 100 50" role="status" aria-label="Carregando">
+  <path class="infinity-loader__track" pathLength="100" d="M50 25C60 10 90 10 90 25S60 40 50 25 10 10 10 25s30 15 40 0" />
+  <path class="infinity-loader__beam" pathLength="100" d="M50 25C60 10 90 10 90 25S60 40 50 25 10 10 10 25s30 15 40 0" />
+</svg>
+*/
+.infinity-loader {
+  width: 120px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 4;
+}
+
+.infinity-loader__track { stroke: #ffffff1f; }
+
+.infinity-loader__beam {
+  stroke: #fff;
+  stroke-dasharray: 25 75;
+  animation: infinity-loader 1.6s linear infinite;
+}
+
+@keyframes infinity-loader {
+  to { stroke-dashoffset: -100; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinity-loader__beam { animation-duration: 4s; }
+}

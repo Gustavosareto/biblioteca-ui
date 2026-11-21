@@ -1,0 +1,27 @@
+/* Uso: <div class="bubble-background"><span style="--c:#8b3dff;--x:0;--y:0;--dx:40%;--dy:20%;--t:8s"></span>...</div> */
+.bubble-background {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #140a2a;
+}
+
+.bubble-background span {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--c);
+  opacity: 0.8;
+  filter: blur(28px);
+  mix-blend-mode: screen;
+  animation: bubble-drift var(--t) ease-in-out infinite alternate;
+}
+
+@keyframes bubble-drift {
+  to { translate: var(--dx) var(--dy); scale: 1.25; }
+}

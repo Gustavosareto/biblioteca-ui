@@ -1,0 +1,49 @@
+/* Uso: <div class="orbit" aria-hidden="true"><span></span><span></span></div> */
+.orbit {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 180px;
+  height: 180px;
+}
+
+/* núcleo */
+.orbit::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff, #a66bff);
+  box-shadow: 0 0 24px #8b3dff;
+}
+
+.orbit span {
+  position: absolute;
+  border: 1px solid #ffffff1f;
+  border-radius: 50%;
+  animation: orbit 3s linear infinite;
+}
+.orbit span:nth-child(1) { inset: 40px; --orbit-color: #22d3ee; }
+.orbit span:nth-child(2) { inset: 8px; --orbit-color: #f472b6; animation-duration: 6s; }
+
+/* planeta */
+.orbit span::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  margin-left: -6px;
+  border-radius: 50%;
+  background: var(--orbit-color);
+  box-shadow: 0 0 12px var(--orbit-color);
+}
+
+@keyframes orbit {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit span { animation: none; }
+}

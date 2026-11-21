@@ -1,0 +1,30 @@
+/* Uso:
+<span class="wave-text">
+  <span class="wave-text__sr">Ondas</span>
+  <span aria-hidden="true" style="--i: 0">O</span>
+  <span aria-hidden="true" style="--i: 1">n</span> ...
+</span>
+*/
+.wave-text > [aria-hidden] {
+  display: inline-block;
+  animation: wave-text 1.2s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.08s);
+}
+
+.wave-text__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes wave-text {
+  0%, 50%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-0.3em); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-text > [aria-hidden] { animation: none; }
+}

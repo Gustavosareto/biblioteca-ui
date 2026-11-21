@@ -1,0 +1,44 @@
+/* Uso:
+<button class="arrow-slide" aria-label="Próximo">
+  <svg>seta</svg>
+  <svg>seta</svg>
+</button>
+*/
+.arrow-slide {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  border: 1px solid #ffffff33;
+  border-radius: 50%;
+  background: #111113;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.arrow-slide svg {
+  position: absolute;
+  inset: 0;
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.arrow-slide svg + svg { transform: translateX(-200%); }
+
+.arrow-slide:hover,
+.arrow-slide:focus-visible { background: #fff; color: #000; }
+.arrow-slide:hover svg,
+.arrow-slide:focus-visible svg { transform: translateX(200%); }
+.arrow-slide:hover svg + svg,
+.arrow-slide:focus-visible svg + svg { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .arrow-slide svg { transition: none; }
+}

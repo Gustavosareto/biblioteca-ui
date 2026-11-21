@@ -1,0 +1,19 @@
+/* Uso: <div class="gallery-expand"><span style="--bg:url(foto.jpg) center/cover"></span>...</div> */
+.gallery-expand {
+  display: flex;
+  gap: 6px;
+  width: 300px;
+  height: 160px;
+}
+
+.gallery-expand span {
+  flex: 1;
+  border-radius: 12px;
+  background: var(--bg);
+  transition: flex-grow 0.5s cubic-bezier(0.3, 1.2, 0.5, 1);
+}
+
+.gallery-expand span:hover,
+.gallery-expand:not(:hover) span:first-child {
+  flex-grow: 4;
+}

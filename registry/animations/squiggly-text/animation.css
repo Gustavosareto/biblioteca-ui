@@ -1,0 +1,14 @@
+/* Uso: inclua o <svg> com os filtros #squiggly-0..4 (ver Animation.tsx) e aplique .squiggly-text */
+.squiggly-text {
+  font: 800 3rem/1.1 system-ui, sans-serif;
+  animation: squiggly 0.35s linear infinite;
+}
+
+/* url() não interpola: troca de filtro em saltos, efeito "stop motion" */
+@keyframes squiggly {
+  0% { filter: url(#squiggly-0); }
+  25% { filter: url(#squiggly-1); }
+  50% { filter: url(#squiggly-2); }
+  75% { filter: url(#squiggly-3); }
+  100% { filter: url(#squiggly-4); }
+}

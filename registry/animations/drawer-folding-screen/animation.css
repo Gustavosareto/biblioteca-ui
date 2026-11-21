@@ -1,0 +1,51 @@
+/* Uso:
+<div class="fold-backdrop">
+  <aside class="fold-drawer" role="dialog" aria-modal="true" aria-labelledby="fold-title">
+    <span></span><span></span><span></span>
+    <div class="fold-content"><h2 id="fold-title">Título</h2><p>Conteúdo do painel.</p></div>
+  </aside>
+</div>
+*/
+.fold-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  animation: fold-fade 0.3s ease both;
+}
+
+.fold-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: min(320px, 80%);
+  perspective: 900px;
+  color: #fafafa;
+  font-size: 15px;
+}
+/* gomos abrem da direita para a esquerda, cada um girando na própria dobradiça */
+.fold-drawer > span {
+  flex: 1;
+  background: #111113;
+  transform-origin: right center;
+  animation: fold-panel 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.fold-drawer > span:nth-child(2) { background: #141417; animation-delay: 0.12s; }
+.fold-drawer > span:nth-child(1) { animation-delay: 0.24s; }
+
+.fold-content {
+  position: absolute;
+  inset: 0;
+  padding: 24px;
+  animation: fold-fade 0.3s 0.55s ease both;
+}
+.fold-content h2 { margin: 0 0 8px; font-size: 20px; }
+.fold-content p { margin: 0; color: #a1a1aa; }
+
+@keyframes fold-fade { from { opacity: 0; } }
+@keyframes fold-panel { from { transform: rotateY(-90deg); filter: brightness(0.3); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .fold-backdrop, .fold-drawer > span, .fold-content { animation: none; }
+}

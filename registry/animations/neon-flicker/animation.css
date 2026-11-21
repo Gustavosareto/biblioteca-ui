@@ -1,0 +1,22 @@
+/* Uso: <span class="neon-flicker">Neon</span> */
+.neon-flicker {
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 0 6px #fff, 0 0 20px #a66bff, 0 0 42px #8b3dff;
+  animation: neon-flicker 3s linear infinite;
+}
+
+@keyframes neon-flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 6px #fff, 0 0 20px #a66bff, 0 0 42px #8b3dff;
+  }
+  20%, 24%, 55% {
+    opacity: 0.45;
+    text-shadow: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neon-flicker { animation: none; }
+}

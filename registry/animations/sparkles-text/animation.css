@@ -1,0 +1,35 @@
+/* Uso:
+<span class="sparkles-text">Mágico
+  <svg viewBox="0 0 21 21" style="top:-10px;left:2%;animation-delay:0s"><path d="M10.5 0 13 8l8 2.5-8 2.5-2.5 8L8 13 0 10.5 8 8Z"/></svg>
+  ... (mais estrelas com posição/atraso diferentes)
+</span>
+*/
+.sparkles-text {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font: 800 40px/1.2 system-ui, sans-serif;
+}
+
+.sparkles-text svg {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  fill: #c084fc;
+  pointer-events: none;
+  animation: sparkles-text 1.8s ease-in-out infinite both;
+}
+.sparkles-text svg:nth-of-type(even) {
+  width: 12px;
+  height: 12px;
+  fill: #fde047;
+}
+
+@keyframes sparkles-text {
+  0%, 100% { opacity: 0; scale: 0; rotate: 0deg; }
+  50% { opacity: 1; scale: 1; rotate: 90deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sparkles-text svg { animation: none; opacity: 1; }
+}

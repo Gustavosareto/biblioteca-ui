@@ -1,0 +1,13 @@
+/* Uso: <div class="clip-reveal">Conteúdo</div> */
+.clip-reveal {
+  animation: clip-reveal 0.9s cubic-bezier(0.77, 0, 0.18, 1) both;
+}
+
+@keyframes clip-reveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clip-reveal { animation: none; }
+}

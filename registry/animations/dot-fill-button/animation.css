@@ -1,0 +1,41 @@
+/* Uso: <button class="dot-fill-button"><span>Começar</span></button> */
+.dot-fill-button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.8rem 1.6rem 0.8rem 2.4rem;
+  border: 1px solid #ffffff33;
+  border-radius: 999px;
+  background: #000;
+  color: #fff;
+  font: 500 15px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.dot-fill-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 1.1rem;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.dot-fill-button > span {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.dot-fill-button:hover::before,
+.dot-fill-button:focus-visible::before { transform: scale(50); }
+.dot-fill-button:hover > span,
+.dot-fill-button:focus-visible > span { color: #000; transform: translateX(-0.4rem); }
+.dot-fill-button:active { transform: scale(0.97); }
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-fill-button::before, .dot-fill-button > span { transition: none; }
+}

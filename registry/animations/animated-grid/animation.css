@@ -1,0 +1,27 @@
+/* Uso: <div class="animated-grid"><span style="--x:1;--y:1;--d:0s"></span>...</div> */
+.animated-grid {
+  --c: 32px;
+  position: relative;
+  width: 288px;
+  height: 160px;
+  background:
+    linear-gradient(#8b3dff33 1px, transparent 1px) 0 0 / var(--c) var(--c),
+    linear-gradient(90deg, #8b3dff33 1px, transparent 1px) 0 0 / var(--c) var(--c);
+  mask-image: radial-gradient(ellipse at center, #000 40%, transparent 85%);
+}
+
+.animated-grid span {
+  position: absolute;
+  left: calc(var(--x) * var(--c) + 1px);
+  top: calc(var(--y) * var(--c) + 1px);
+  width: calc(var(--c) - 1px);
+  height: calc(var(--c) - 1px);
+  background: #8b3dff;
+  opacity: 0;
+  animation: grid-flash 4s ease-in-out var(--d) infinite;
+}
+
+@keyframes grid-flash {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 0.55; }
+}

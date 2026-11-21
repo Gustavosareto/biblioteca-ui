@@ -1,0 +1,53 @@
+/* Uso: as duas metades do triângulo viram as duas barras do pause (clip-path).
+<label class="play-pause">
+  <input type="checkbox" aria-label="Reproduzir ou pausar" />
+  <span class="play-pause__icon"><span></span><span></span></span>
+</label>
+*/
+.play-pause {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fafafa;
+  color: #09090b;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+.play-pause:active { transform: scale(0.94); }
+.play-pause:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: 3px; }
+
+.play-pause input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.play-pause__icon {
+  display: flex;
+  width: 20px;
+  height: 22px;
+  margin-left: 3px; /* centro óptico do play */
+  transition: margin 0.3s ease;
+}
+
+.play-pause__icon > span {
+  flex: 1;
+  background: currentColor;
+  transition: clip-path 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.play-pause__icon > span:first-child { clip-path: polygon(0 0, 100% 25%, 100% 75%, 0 100%); }
+.play-pause__icon > span:last-child { clip-path: polygon(0 25%, 100% 50%, 100% 50%, 0 75%); }
+
+.play-pause:has(input:checked) .play-pause__icon { margin-left: 0; }
+.play-pause:has(input:checked) .play-pause__icon > span:first-child { clip-path: polygon(0 0, 65% 0, 65% 100%, 0 100%); }
+.play-pause:has(input:checked) .play-pause__icon > span:last-child { clip-path: polygon(35% 0, 100% 0, 100% 100%, 35% 100%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .play-pause__icon, .play-pause__icon > span { transition: none; }
+}

@@ -1,0 +1,48 @@
+/* Uso:
+<div class="sheet-backdrop">
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+    <h2 id="sheet-title">Título</h2><p>Conteúdo da folha.</p>
+  </div>
+</div>
+*/
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  animation: sheet-fade 0.3s ease both;
+}
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 28px 24px 24px;
+  border-top: 1px solid #ffffff14;
+  border-radius: 20px 20px 0 0;
+  background: #111113;
+  color: #fafafa;
+  font-size: 15px;
+  animation: sheet-up 0.5s cubic-bezier(0.32, 1.25, 0.6, 1) both;
+}
+/* alça */
+.sheet::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 40px;
+  height: 4px;
+  margin-left: -20px;
+  border-radius: 999px;
+  background: #3f3f46;
+}
+.sheet h2 { margin: 0 0 8px; font-size: 20px; }
+.sheet p { margin: 0; color: #a1a1aa; }
+
+@keyframes sheet-fade { from { opacity: 0; } }
+@keyframes sheet-up { from { transform: translateY(100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet-backdrop, .sheet { animation: none; }
+}

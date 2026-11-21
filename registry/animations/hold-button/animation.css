@@ -1,0 +1,39 @@
+/* Uso: <button class="hold-button"><span>Segure para excluir</span></button>
+Para confirmar de fato, no JS escute "transitionend" do botão enquanto ele estiver pressionado.
+*/
+.hold-button {
+  position: relative;
+  overflow: hidden;
+  padding: 0.85rem 1.5rem;
+  border: 1px solid #ef444466;
+  border-radius: 12px;
+  background: #1c1010;
+  color: #fca5a5;
+  font: 500 15px/1 system-ui, sans-serif;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.15s ease;
+}
+
+.hold-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ef4444;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease-out; /* ao soltar: volta rápido */
+}
+
+.hold-button > span {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.hold-button:active { transform: scale(0.97); }
+.hold-button:active::before { transform: scaleX(1); transition: transform 1.5s linear; }
+.hold-button:active > span { color: #fff; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hold-button:active::before { transition-duration: 0.01s; }
+}

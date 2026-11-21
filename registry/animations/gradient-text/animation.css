@@ -1,0 +1,17 @@
+/* Uso: <span class="gradient-text">Gradiente</span> */
+.gradient-text {
+  background: linear-gradient(90deg, #8b3dff, #22d3ee, #f472b6, #8b3dff) 0 0 / 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  animation: gradient-text 4s linear infinite;
+}
+
+@keyframes gradient-text {
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-text { animation: none; }
+}

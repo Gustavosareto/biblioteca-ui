@@ -1,0 +1,49 @@
+/* Uso:
+<label class="star-pop">
+  <input type="checkbox" aria-label="Favoritar" />
+  <svg viewBox="0 0 24 24"><path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.5l-5.87 3.08 1.12-6.54L2.5 9.41l6.56-.95z" /></svg>
+</label>
+*/
+.star-pop {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.star-pop input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.star-pop svg {
+  width: 56px;
+  height: 56px;
+  fill: transparent;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: fill 0.2s ease, color 0.2s ease;
+}
+
+.star-pop input:checked + svg {
+  color: #a66bff;
+  fill: #a66bff;
+  animation: star-pop 0.45s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.star-pop input:focus-visible + svg { outline: 2px solid #8b3dff; outline-offset: 4px; border-radius: 8px; }
+
+@keyframes star-pop {
+  0% { transform: scale(0.6) rotate(-15deg); }
+  60% { transform: scale(1.2) rotate(6deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star-pop input:checked + svg { animation: none; }
+}

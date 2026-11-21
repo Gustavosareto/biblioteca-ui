@@ -1,0 +1,55 @@
+/* Uso (tempo do anel = --undo-time, padrão 5s):
+<div class="undo-snackbar" role="status">
+  <svg class="undo-snackbar__ring" viewBox="0 0 20 20">
+    <circle cx="10" cy="10" r="8" pathLength="100" />
+    <circle cx="10" cy="10" r="8" pathLength="100" />
+  </svg>
+  <span>Item excluído</span>
+  <button>Desfazer</button>
+</div>
+*/
+.undo-snackbar {
+  --undo-time: 5s;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 8px 8px 14px;
+  border-radius: 12px;
+  background: #fafafa;
+  box-shadow: 0 12px 32px #0007;
+  color: #09090b;
+  font: 500 14px/1 system-ui, sans-serif;
+  animation: undo-snackbar-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.undo-snackbar__ring {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke-width: 2.5;
+  transform: rotate(-90deg);
+}
+.undo-snackbar__ring circle:first-child { stroke: #e4e4e7; }
+.undo-snackbar__ring circle:last-child {
+  stroke: #8b3dff;
+  stroke-dasharray: 100;
+  animation: undo-snackbar-ring var(--undo-time) linear 0.3s both;
+}
+
+.undo-snackbar button {
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  color: #7c3aed;
+  font: 600 14px/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+.undo-snackbar button:hover { background: #8b3dff14; }
+
+@keyframes undo-snackbar-in { from { opacity: 0; transform: translateY(16px) scale(0.96); } }
+@keyframes undo-snackbar-ring { to { stroke-dashoffset: 100; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .undo-snackbar { animation: none; }
+}

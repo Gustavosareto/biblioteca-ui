@@ -1,0 +1,45 @@
+/* Uso: <div class="liquid-wave" role="status" aria-label="Carregando"><span>Carregando</span></div> */
+.liquid-wave {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 112px;
+  height: 112px;
+  overflow: hidden;
+  border: 3px solid #8b3dff;
+  border-radius: 50%;
+  background: #8b3dff1a;
+}
+
+/* quadrados arredondados gigantes girando: a borda de cima vira a onda */
+.liquid-wave::before,
+.liquid-wave::after {
+  content: "";
+  position: absolute;
+  left: -60%;
+  width: 220%;
+  aspect-ratio: 1;
+  border-radius: 42%;
+  background: #8b3dff;
+  animation: liquid-spin 5s linear infinite, liquid-rise 4s ease-in-out infinite alternate;
+}
+.liquid-wave::after {
+  border-radius: 38%;
+  background: #a78bfa88;
+  animation-duration: 7s, 4s;
+  animation-delay: 0s, -1s;
+}
+
+.liquid-wave span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font: 700 0.8rem system-ui, sans-serif;
+  mix-blend-mode: difference;
+}
+
+@keyframes liquid-spin { to { rotate: 360deg; } }
+@keyframes liquid-rise {
+  from { top: 88%; }
+  to { top: 12%; }
+}

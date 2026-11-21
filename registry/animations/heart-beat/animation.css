@@ -1,0 +1,17 @@
+/* Uso: <svg class="heart-beat" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" /></svg> */
+.heart-beat {
+  width: 56px;
+  height: 56px;
+  fill: #f43f5e;
+  filter: drop-shadow(0 0 12px rgb(244 63 94 / 0.5));
+  animation: heart-beat 1.3s ease-in-out infinite;
+}
+
+@keyframes heart-beat {
+  0%, 28%, 70%, 100% { transform: scale(1); }
+  14%, 42% { transform: scale(1.22); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart-beat { animation: none; }
+}

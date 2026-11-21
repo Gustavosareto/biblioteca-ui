@@ -1,0 +1,46 @@
+/* Uso:
+<div class="skew-backdrop">
+  <aside class="skew-drawer" role="dialog" aria-modal="true" aria-labelledby="skew-title">
+    <h2 id="skew-title">Título</h2><p>Conteúdo do painel.</p>
+  </aside>
+</div>
+*/
+.skew-backdrop {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: rgb(0 0 0 / 0.5);
+  animation: skew-fade 0.3s ease both;
+}
+
+/* passa 48px da borda direita: a inclinação não abre canto vazio */
+.skew-drawer {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  bottom: 0;
+  width: calc(min(320px, 80%) + 48px);
+  padding: 24px 72px 24px 24px;
+  border-left: 1px solid #ffffff14;
+  background: #111113;
+  color: #fafafa;
+  font-size: 15px;
+  animation: skew-in 0.65s both;
+}
+.skew-drawer > * { animation: skew-content 0.65s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.skew-drawer > p { animation-delay: 0.14s; }
+.skew-drawer h2 { margin: 0 0 8px; font-size: 20px; }
+.skew-drawer p { margin: 0; color: #a1a1aa; }
+
+@keyframes skew-fade { from { opacity: 0; } }
+@keyframes skew-in {
+  0% { transform: translateX(110%) skewX(-24deg); animation-timing-function: cubic-bezier(0.3, 0.9, 0.4, 1); }
+  55% { transform: translateX(-12px) skewX(6deg); animation-timing-function: ease-in-out; }
+  80% { transform: translateX(0) skewX(-2deg); animation-timing-function: ease-out; }
+  100% { transform: none; }
+}
+@keyframes skew-content { from { transform: translateX(60px) skewX(-20deg); opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .skew-backdrop, .skew-drawer, .skew-drawer > * { animation: none; }
+}

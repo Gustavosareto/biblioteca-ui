@@ -1,0 +1,66 @@
+/* Uso (o último número repete o primeiro para o loop não ter emenda):
+<span class="counter-badge" role="img" aria-label="Notificações">
+  <svg>sino</svg>
+  <span class="counter-badge__count" aria-hidden="true">
+    <span class="counter-badge__roll"><span>2</span><span>3</span><span>4</span><span>2</span></span>
+  </span>
+</span>
+*/
+.counter-badge {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #ffffff1f;
+  border-radius: 14px;
+  background: #19191c;
+  color: #fff;
+}
+
+.counter-badge svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.counter-badge__count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  height: 20px;
+  min-width: 20px;
+  overflow: hidden;
+  border: 2px solid #09090b;
+  border-radius: 999px;
+  background: #ef4444;
+  font: 700 12px/20px system-ui, sans-serif;
+  text-align: center;
+  animation: counter-badge-pop 6s ease-out infinite;
+}
+
+.counter-badge__roll {
+  display: flex;
+  flex-direction: column;
+  animation: counter-badge-roll 6s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes counter-badge-roll {
+  0%, 28% { transform: translateY(0); }
+  33%, 61% { transform: translateY(-20px); }
+  66%, 94% { transform: translateY(-40px); }
+  100% { transform: translateY(-60px); }
+}
+
+@keyframes counter-badge-pop {
+  0%, 8%, 28%, 41%, 61%, 74%, 100% { transform: scale(1); }
+  2%, 35%, 68% { transform: scale(1.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .counter-badge__count, .counter-badge__roll { animation: none; }
+}

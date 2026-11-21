@@ -1,0 +1,19 @@
+/* Uso: <span class="text-shimmer">Gerando resposta...</span> */
+.text-shimmer {
+  display: inline-block;
+  font: 600 28px/1.2 system-ui, sans-serif;
+  color: transparent;
+  background: linear-gradient(90deg, #71717a 40%, #fff 50%, #71717a 60%) 0 0 / 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: text-shimmer 2.2s linear infinite;
+}
+
+@keyframes text-shimmer {
+  from { background-position: 100% 0; }
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer { animation: none; }
+}

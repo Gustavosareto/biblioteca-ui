@@ -1,0 +1,56 @@
+/* Uso:
+<label class="copy-check">
+  <input type="checkbox" aria-label="Copiar" />
+  <svg class="copy-check__copy">...</svg>
+  <svg class="copy-check__done"><path pathLength="1" d="m5 12 5 5 9-10" /></svg>
+</label>
+*/
+.copy-check {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #ffffff26;
+  border-radius: 14px;
+  background: #19191c;
+  color: #fff;
+  cursor: pointer;
+}
+.copy-check:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: 2px; }
+
+.copy-check input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.copy-check svg {
+  grid-area: 1 / 1;
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.copy-check__copy { transition: opacity 0.2s ease, transform 0.3s ease, filter 0.3s ease; }
+
+.copy-check__done {
+  color: #22c55e;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.copy-check:has(input:checked) .copy-check__copy { opacity: 0; transform: scale(0.5); filter: blur(4px); }
+.copy-check:has(input:checked) .copy-check__done { stroke-dashoffset: 0; transition-delay: 0.1s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-check svg { transition: none; }
+}

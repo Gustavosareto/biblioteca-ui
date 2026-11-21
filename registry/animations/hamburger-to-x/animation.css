@@ -1,0 +1,38 @@
+/* Uso:
+<label class="hamburger">
+  <input type="checkbox" aria-label="Abrir menu" />
+  <span></span><span></span><span></span>
+</label>
+*/
+.hamburger {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+
+.hamburger input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 4px;
+  border-radius: 4px;
+  background: #fff;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1), opacity 0.2s ease;
+}
+
+.hamburger input:checked ~ span:nth-of-type(1) { transform: translateY(11px) rotate(45deg); }
+.hamburger input:checked ~ span:nth-of-type(2) { opacity: 0; transform: scaleX(0); }
+.hamburger input:checked ~ span:nth-of-type(3) { transform: translateY(-11px) rotate(-45deg); }
+.hamburger:has(input:focus-visible) { outline: 2px solid #8b3dff; outline-offset: 4px; border-radius: 8px; }

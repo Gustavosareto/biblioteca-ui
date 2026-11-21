@@ -1,0 +1,64 @@
+/* Uso:
+<div class="elastic-backdrop">
+  <aside class="elastic-drawer" role="dialog" aria-modal="true" aria-labelledby="elastic-title">
+    <h2 id="elastic-title">Título</h2><p>Conteúdo do painel.</p>
+  </aside>
+</div>
+*/
+.elastic-backdrop {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: rgb(0 0 0 / 0.5);
+  animation: elastic-fade 0.3s ease both;
+}
+
+/* passa 48px da borda direita para o overshoot não abrir buraco */
+.elastic-drawer {
+  position: absolute;
+  top: 0;
+  right: -48px;
+  bottom: 0;
+  width: calc(min(320px, 80%) + 48px);
+  padding: 24px 72px 24px 24px;
+  background: #111113;
+  color: #fafafa;
+  font-size: 15px;
+  animation: elastic-in 0.9s both;
+}
+/* a "barriga" da borda: elipse da mesma cor centrada na aresta */
+.elastic-drawer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -40px;
+  width: 80px;
+  border-radius: 50%;
+  background: inherit;
+  animation: elastic-bulge 0.9s ease-out both;
+}
+.elastic-drawer h2 { margin: 0 0 8px; font-size: 20px; }
+.elastic-drawer p { margin: 0; color: #a1a1aa; }
+
+@keyframes elastic-fade { from { opacity: 0; } }
+@keyframes elastic-in {
+  0% { transform: translateX(100%); animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1); }
+  45% { transform: translateX(-24px); animation-timing-function: ease-in-out; }
+  65% { transform: translateX(10px); animation-timing-function: ease-in-out; }
+  82% { transform: translateX(-4px); animation-timing-function: ease-in-out; }
+  100% { transform: translateX(0); }
+}
+@keyframes elastic-bulge {
+  0% { transform: scaleX(1); }
+  45% { transform: scaleX(0.7); }
+  65% { transform: scaleX(0.3); }
+  82% { transform: scaleX(0.12); }
+  100% { transform: scaleX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .elastic-backdrop, .elastic-drawer { animation: none; }
+  .elastic-drawer::before { display: none; }
+}

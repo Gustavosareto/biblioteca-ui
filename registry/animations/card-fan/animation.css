@@ -1,0 +1,34 @@
+/* Uso:
+<div class="card-fan">
+  <span style="background:#8b3dff;--i:-1;--y:1"></span>
+  <span style="background:#22d3ee;--i:0;--y:0"></span>
+  <span style="background:#f472b6;--i:1;--y:1"></span>
+</div>
+*/
+.card-fan {
+  position: relative;
+  width: 240px;
+  height: 170px;
+}
+
+.card-fan span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90px;
+  height: 120px;
+  margin: -60px 0 0 -45px;
+  border: 3px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.4);
+  rotate: calc(var(--i) * 4deg);
+  transition:
+    translate 0.5s cubic-bezier(0.3, 1.5, 0.5, 1),
+    rotate 0.5s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+.card-fan span:nth-child(2) { z-index: 1; }
+
+.card-fan:hover span {
+  translate: calc(var(--i) * 70px) calc(var(--y) * 12px);
+  rotate: calc(var(--i) * 12deg);
+}

@@ -1,0 +1,19 @@
+/* Uso: <div class="spinner-ring" role="status" aria-label="Carregando"></div> */
+.spinner-ring {
+  width: 56px;
+  height: 56px;
+  border: 5px solid rgb(255 255 255 / 0.2);
+  border-top-color: #fff;
+  border-right-color: #fff;
+  border-radius: 50%;
+  animation: spinner-ring 0.9s linear infinite;
+}
+
+@keyframes spinner-ring {
+  to { transform: rotate(360deg); }
+}
+
+/* spinner continua girando (indica progresso), só mais devagar */
+@media (prefers-reduced-motion: reduce) {
+  .spinner-ring { animation-duration: 2.5s; }
+}

@@ -1,0 +1,79 @@
+/* Uso:
+<details class="dropdown-stagger">
+  <summary>Opções <svg>...</svg></summary>
+  <ul>
+    <li style="--i: 0">Editar</li>
+    <li style="--i: 1">Duplicar</li> ...
+  </ul>
+</details>
+*/
+.dropdown-stagger {
+  position: relative;
+  font: 500 15px/1 system-ui, sans-serif;
+  color: #fafafa;
+}
+
+.dropdown-stagger summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid #ffffff26;
+  border-radius: 12px;
+  background: #111113;
+  list-style: none;
+  cursor: pointer;
+}
+.dropdown-stagger summary::-webkit-details-marker { display: none; }
+.dropdown-stagger summary:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+.dropdown-stagger svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.25s ease;
+}
+.dropdown-stagger[open] svg { transform: rotate(180deg); }
+
+.dropdown-stagger ul {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  z-index: 10;
+  min-width: 180px;
+  margin: 0;
+  padding: 6px;
+  border: 1px solid #ffffff1a;
+  border-radius: 14px;
+  background: #19191c;
+  box-shadow: 0 16px 40px #0008;
+  list-style: none;
+  transform-origin: top left;
+  animation: dropdown-stagger-in 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.dropdown-stagger li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #d4d4d8;
+  cursor: pointer;
+  animation: dropdown-stagger-item 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(60ms + var(--i) * 40ms);
+}
+.dropdown-stagger li:hover { background: #ffffff12; color: #fff; }
+
+@keyframes dropdown-stagger-in {
+  from { opacity: 0; transform: translateY(-4px) scale(0.95); }
+}
+
+@keyframes dropdown-stagger-item {
+  from { opacity: 0; transform: translateX(-8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropdown-stagger ul, .dropdown-stagger li { animation: none; }
+}

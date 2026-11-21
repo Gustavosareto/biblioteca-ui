@@ -1,0 +1,57 @@
+/* Uso (3 opções; para mais, ajuste a largura da pílula e os seletores nth-of-type):
+<div class="tabs-slide" role="radiogroup">
+  <label><input type="radio" name="periodo" checked />Dia</label>
+  <label><input type="radio" name="periodo" />Semana</label>
+  <label><input type="radio" name="periodo" />Mês</label>
+  <span class="tabs-slide__pill"></span>
+</div>
+*/
+.tabs-slide {
+  position: relative;
+  display: inline-grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  padding: 4px;
+  border: 1px solid #ffffff14;
+  border-radius: 999px;
+  background: #19191c;
+  font-size: 15px;
+}
+
+.tabs-slide label {
+  position: relative;
+  z-index: 1;
+  padding: 8px 22px;
+  border-radius: 999px;
+  color: #a1a1aa;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.tabs-slide label:has(input:checked) { color: #fff; }
+.tabs-slide label:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: -2px; }
+
+.tabs-slide input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.tabs-slide__pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc((100% - 8px) / 3);
+  border-radius: 999px;
+  background: #8b3dff;
+  transition: transform 0.35s cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+.tabs-slide:has(label:nth-of-type(2) input:checked) .tabs-slide__pill { transform: translateX(100%); }
+.tabs-slide:has(label:nth-of-type(3) input:checked) .tabs-slide__pill { transform: translateX(200%); }
+
+@media (prefers-reduced-motion: reduce) {
+  .tabs-slide__pill { transition: none; }
+}

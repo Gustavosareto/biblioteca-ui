@@ -1,0 +1,69 @@
+/* Uso:
+<div class="command-palette-backdrop">
+  <div class="command-palette" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
+    <input placeholder="Buscar comando..." aria-label="Buscar comando" />
+    <ul>
+      <li style="--i: 0">Novo arquivo</li>
+      <li style="--i: 1">Abrir projeto</li> ...
+    </ul>
+  </div>
+</div>
+*/
+.command-palette-backdrop {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(0 0 0 / 0.55);
+  backdrop-filter: blur(4px);
+  animation: command-palette-fade 0.25s ease-out both;
+}
+
+.command-palette {
+  width: min(380px, calc(100% - 32px));
+  overflow: hidden;
+  border: 1px solid #ffffff1f;
+  border-radius: 16px;
+  background: #141416;
+  box-shadow: 0 24px 60px #000a;
+  font: 14px/1.4 system-ui, sans-serif;
+  animation: command-palette-drop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.command-palette input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px 18px;
+  border: 0;
+  border-bottom: 1px solid #ffffff14;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+}
+
+.command-palette ul {
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+}
+
+.command-palette li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #a1a1aa;
+  cursor: pointer;
+  animation: command-palette-item 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation-delay: calc(80ms + var(--i) * 40ms);
+}
+.command-palette li:first-child,
+.command-palette li:hover { background: #ffffff12; color: #fff; }
+
+@keyframes command-palette-fade { from { opacity: 0; } }
+@keyframes command-palette-drop { from { opacity: 0; transform: translateY(-14px) scale(0.97); } }
+@keyframes command-palette-item { from { opacity: 0; transform: translateY(4px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .command-palette-backdrop, .command-palette, .command-palette li { animation: none; }
+}

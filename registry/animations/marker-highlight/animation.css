@@ -1,0 +1,25 @@
+/* Uso: <p class="marker-highlight">Destaque <mark>o que importa</mark>.</p> */
+.marker-highlight {
+  max-width: 16ch;
+  margin: 0;
+  font: 600 1.5rem/1.4 system-ui, sans-serif;
+  text-align: center;
+}
+
+.marker-highlight mark {
+  padding: 0 0.15em;
+  color: inherit;
+  border-radius: 0.3em;
+  background: linear-gradient(104deg, #8b3dff00 0.2em, #8b3dff88 0.4em, #8b3dff66 95%, #8b3dff00) no-repeat 0 60% / 0% 70%;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: marker 3.5s ease-in-out infinite;
+}
+
+/* entra ancorado à esquerda, sai ancorado à direita */
+@keyframes marker {
+  0% { background-size: 0% 70%; background-position: 0 60%; }
+  35% { background-size: 100% 70%; background-position: 0 60%; }
+  80% { background-size: 100% 70%; background-position: 100% 60%; }
+  100% { background-size: 0% 70%; background-position: 100% 60%; }
+}

@@ -1,0 +1,38 @@
+/* Uso (a 1ª palavra se repete no fim para o loop não pular):
+<span class="word-rotate">Interfaces
+  <span class="word-rotate__window">
+    <span class="word-rotate__list">
+      <span>rápidas</span><span>bonitas</span><span>fluidas</span><span aria-hidden="true">rápidas</span>
+    </span>
+  </span>
+</span>
+*/
+.word-rotate {
+  color: #fff;
+  font: 700 30px/1.2 system-ui, sans-serif;
+}
+
+.word-rotate__window {
+  display: inline-block;
+  height: 1.2em;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.word-rotate__list {
+  display: flex;
+  flex-direction: column;
+  color: #a78bfa;
+  animation: word-rotate 6s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+}
+
+@keyframes word-rotate {
+  0%, 25% { translate: 0 0; }
+  33.33%, 58.33% { translate: 0 -1.2em; }
+  66.66%, 91.66% { translate: 0 -2.4em; }
+  100% { translate: 0 -3.6em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .word-rotate__list { animation: none; }
+}

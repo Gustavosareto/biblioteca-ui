@@ -1,0 +1,37 @@
+/* Uso:
+<nav class="underline-nav">
+  <a href="#" aria-current="page">Início</a><a href="#">Sobre</a><a href="#">Contato</a>
+</nav>
+*/
+.underline-nav {
+  display: flex;
+  gap: 28px;
+  font-size: 18px;
+}
+
+.underline-nav a {
+  position: relative;
+  padding: 4px 0;
+  color: #a1a1aa;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.underline-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #8b3dff;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.underline-nav a:is(:hover, :focus-visible, [aria-current]) { color: #fafafa; outline: none; }
+.underline-nav a:is(:hover, :focus-visible, [aria-current])::after { transform: scaleX(1); transform-origin: left; }
+
+@media (prefers-reduced-motion: reduce) {
+  .underline-nav a::after { transition: none; }
+}

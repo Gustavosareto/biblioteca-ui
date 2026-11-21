@@ -1,0 +1,48 @@
+/* Uso:
+<ul class="stagger-list">
+  <li style="--i: 0"><span>A</span>Ana</li>
+  <li style="--i: 1"><span>B</span>Bruno</li> ...
+</ul>
+*/
+.stagger-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 500 15px/1 system-ui, sans-serif;
+}
+
+.stagger-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid #ffffff14;
+  border-radius: 12px;
+  background: #19191c;
+  color: #fafafa;
+  animation: stagger-list 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(var(--i) * 80ms);
+}
+
+.stagger-list li > span {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #8b3dff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+@keyframes stagger-list {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stagger-list li { animation: none; }
+}

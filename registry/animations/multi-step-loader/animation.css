@@ -1,0 +1,32 @@
+/* Uso (4 itens):
+<ol class="multi-step-loader">
+  <li>Conectando</li><li>Lendo arquivos</li><li>Gerando estilos</li><li>Pronto!</li>
+</ol>
+*/
+/* Um gradiente recortado no texto desce em 5 degraus: cada degrau "conclui" uma linha. */
+.multi-step-loader {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: transparent;
+  font: 500 15px/24px system-ui, sans-serif;
+  background: linear-gradient(#c4b5fd 50%, #52525b 0) 0 100% / 100% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: multi-step-loader 5s steps(5, jump-none) infinite;
+}
+.multi-step-loader li::before {
+  content: "✓";
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+@keyframes multi-step-loader {
+  to { background-position: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .multi-step-loader { animation: none; background-position: 0 0; }
+}

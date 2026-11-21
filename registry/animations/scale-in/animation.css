@@ -1,0 +1,13 @@
+/* Uso: <div class="scale-in">Conteúdo</div> */
+.scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scale-in { animation: none; }
+}

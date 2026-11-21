@@ -1,0 +1,34 @@
+/* Uso: uma letra por <span>, cada uma girada 360/total * índice
+<div class="spinning-text" role="img" aria-label="UI MOTION • ">
+  <span style="rotate:0deg">U</span>
+  <span style="rotate:36deg">I</span>
+  ...
+</div>
+*/
+.spinning-text {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  color: #fff;
+  font: 600 13px system-ui, sans-serif;
+  animation: spinning-text 10s linear infinite;
+}
+
+.spinning-text span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1em;
+  height: 50%;
+  margin-left: -0.5em;
+  text-align: center;
+  transform-origin: 50% 100%;
+}
+
+@keyframes spinning-text {
+  to { rotate: 360deg; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinning-text { animation: none; }
+}

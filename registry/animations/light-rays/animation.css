@@ -1,0 +1,30 @@
+/* Uso: <div class="light-rays"><span style="--r:-20deg;--d:-1s"></span>...</div> */
+.light-rays {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 50% -20%, #8b3dff40, transparent 70%), #0b0b12;
+}
+
+.light-rays span {
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  width: 44px;
+  height: 140%;
+  margin-left: -22px;
+  transform-origin: 50% 0;
+  background: linear-gradient(#c4b5fdaa, transparent 80%);
+  filter: blur(10px);
+  mix-blend-mode: screen;
+  rotate: var(--r);
+  animation: light-ray 6s ease-in-out var(--d) infinite alternate;
+}
+
+@keyframes light-ray {
+  0% { rotate: calc(var(--r) - 6deg); opacity: 0.3; }
+  50% { opacity: 0.9; }
+  100% { rotate: calc(var(--r) + 6deg); opacity: 0.4; }
+}

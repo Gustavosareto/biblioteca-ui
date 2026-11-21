@@ -1,0 +1,60 @@
+/* Uso:
+<span class="tooltip-pop">
+  <button>Salvar</button>
+  <span class="tooltip-pop__tip" role="tooltip">Ctrl + S</span>
+</span>
+*/
+.tooltip-pop {
+  position: relative;
+  display: inline-block;
+  font: 500 15px/1 system-ui, sans-serif;
+}
+
+.tooltip-pop button {
+  padding: 0.75rem 1.2rem;
+  border: 1px solid #ffffff26;
+  border-radius: 12px;
+  background: #111113;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tooltip-pop__tip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #09090b;
+  font-size: 13px;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(-50%) translateY(4px) scale(0.85);
+  transform-origin: bottom center;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  pointer-events: none;
+}
+
+.tooltip-pop__tip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border: 5px solid transparent;
+  border-top-color: #fafafa;
+  transform: translateX(-50%);
+}
+
+/* aparece com pequeno atraso e mola; some na hora */
+.tooltip-pop:hover .tooltip-pop__tip,
+.tooltip-pop:focus-within .tooltip-pop__tip {
+  opacity: 1;
+  transform: translateX(-50%);
+  transition: opacity 0.2s ease 0.1s, transform 0.35s cubic-bezier(0.3, 1.5, 0.5, 1) 0.1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tooltip-pop__tip { transition: none !important; }
+}

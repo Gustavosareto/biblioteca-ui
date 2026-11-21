@@ -1,0 +1,29 @@
+/* Uso:
+<div class="bars-loader" role="status" aria-label="Carregando">
+  <span style="--i: 0"></span><span style="--i: 1"></span> ... (5 barras)
+</div>
+*/
+.bars-loader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 40px;
+}
+
+.bars-loader > span {
+  width: 6px;
+  height: 100%;
+  border-radius: 3px;
+  background: #fff;
+  animation: bars-loader 1s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.15s);
+}
+
+@keyframes bars-loader {
+  0%, 100% { transform: scaleY(0.3); opacity: 0.5; }
+  50% { transform: scaleY(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bars-loader > span { animation-duration: 3s; }
+}

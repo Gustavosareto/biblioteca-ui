@@ -1,0 +1,97 @@
+/* Uso:
+<nav class="bubble-menu" aria-label="Menu">
+  <label class="bubble-menu__toggle"><input type="checkbox" aria-label="Abrir menu" /><span></span></label>
+  <ul>
+    <li style="--i:0"><a href="#">Início</a></li>
+    <li style="--i:1"><a href="#">Projetos</a></li>
+    <li style="--i:2"><a href="#">Contato</a></li>
+  </ul>
+</nav>
+*/
+.bubble-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font: 600 14px system-ui, sans-serif;
+}
+
+.bubble-menu__toggle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #8b3dff;
+  cursor: pointer;
+  transition: rotate 0.4s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+.bubble-menu__toggle input {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+/* ícone + */
+.bubble-menu__toggle span {
+  position: relative;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  background: #fff;
+  pointer-events: none;
+}
+.bubble-menu__toggle span::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  rotate: 90deg;
+}
+.bubble-menu:has(input:checked) .bubble-menu__toggle { rotate: 135deg; }
+.bubble-menu__toggle:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: 2px; }
+
+.bubble-menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* fechado: invisível e fora do Tab (visibility só some depois da animação) */
+.bubble-menu li {
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 -12px;
+  scale: 0.6;
+  transition: opacity 0.2s, translate 0.2s, scale 0.2s, visibility 0s 0.2s;
+}
+.bubble-menu:has(input:checked) li {
+  opacity: 1;
+  visibility: visible;
+  translate: 0 0;
+  scale: 1;
+  transition:
+    opacity 0.3s,
+    translate 0.45s cubic-bezier(0.3, 1.5, 0.5, 1),
+    scale 0.45s cubic-bezier(0.3, 1.5, 0.5, 1),
+    visibility 0s;
+  transition-delay: calc(var(--i) * 60ms);
+}
+
+.bubble-menu a {
+  display: block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a0a0b;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.bubble-menu a:hover { background: #e9d5ff; }
+.bubble-menu a:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }

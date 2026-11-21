@@ -1,0 +1,51 @@
+/* Uso:
+<div class="push-root">
+  <div class="push-page">...sua página...</div>
+  <aside class="push-drawer" role="dialog" aria-modal="true" aria-labelledby="push-title">
+    <h2 id="push-title">Título</h2><p>Conteúdo do painel.</p>
+  </aside>
+</div>
+*/
+.push-root {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #09090b;
+}
+
+.push-page {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 24px;
+  background: #18181b;
+  transform-origin: left center;
+  animation: push-page 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.push-page span { height: 12px; border-radius: 6px; background: #ffffff14; }
+.push-page span:first-child { width: 50%; height: 18px; }
+
+.push-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 70%);
+  padding: 24px;
+  border-left: 1px solid #ffffff14;
+  background: #111113;
+  color: #fafafa;
+  font-size: 15px;
+  animation: push-drawer 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.push-drawer h2 { margin: 0 0 8px; font-size: 20px; }
+.push-drawer p { margin: 0; color: #a1a1aa; }
+
+@keyframes push-page { to { transform: translateX(-35%) scale(0.9); border-radius: 16px; opacity: 0.6; } }
+@keyframes push-drawer { from { transform: translateX(100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .push-page, .push-drawer { animation: none; }
+}

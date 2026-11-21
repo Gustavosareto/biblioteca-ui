@@ -1,0 +1,41 @@
+/* Uso:
+<p class="blur-words">
+  <span class="blur-words__sr">Texto que aparece aos poucos</span>
+  <span aria-hidden="true" style="--i: 0">Texto</span>
+  <span aria-hidden="true" style="--i: 1">que</span> ...
+</p>
+Para entrar só uma vez: troque "infinite" por "1" e use os keyframes até 20%.
+*/
+.blur-words {
+  max-width: 320px;
+  margin: 0;
+  color: #fafafa;
+  font: 600 26px/1.3 system-ui, sans-serif;
+  text-align: center;
+}
+
+.blur-words > [aria-hidden] {
+  display: inline-block;
+  margin-right: 0.25em;
+  animation: blur-words 4.5s cubic-bezier(0.22, 1, 0.36, 1) infinite both;
+  animation-delay: calc(var(--i) * 0.12s);
+}
+
+.blur-words__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@keyframes blur-words {
+  0% { opacity: 0; filter: blur(10px); transform: translateY(0.25em); }
+  20%, 80% { opacity: 1; filter: blur(0); transform: none; }
+  100% { opacity: 0; filter: blur(10px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blur-words > [aria-hidden] { animation: none; }
+}

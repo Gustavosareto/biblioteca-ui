@@ -1,0 +1,33 @@
+/* Uso:
+<button class="flip-button">
+  <span class="flip-button__front">Frente</span>
+  <span class="flip-button__back" aria-hidden="true">Verso</span>
+</button>
+*/
+.flip-button {
+  position: relative;
+  width: 170px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  perspective: 600px;
+  font: 600 0.95rem system-ui, sans-serif;
+}
+
+.flip-button span {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  transition: rotate 0.55s cubic-bezier(0.3, 1.4, 0.5, 1);
+}
+
+.flip-button__front { background: #8b3dff; color: #fff; rotate: x 0deg; }
+.flip-button__back { background: #fff; color: #111; rotate: x -180deg; }
+
+.flip-button:is(:hover, :focus-visible) .flip-button__front { rotate: x 180deg; }
+.flip-button:is(:hover, :focus-visible) .flip-button__back { rotate: x 0deg; }

@@ -1,0 +1,64 @@
+/* Uso:
+<label class="sun-moon">
+  <input type="checkbox" aria-label="Modo escuro" />
+  <span class="sun-moon__icon"></span>
+</label>
+*/
+.sun-moon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #ffffff26;
+  border-radius: 50%;
+  background: #19191c;
+  color: #fbbf24;
+  cursor: pointer;
+  transition: color 0.5s ease;
+}
+.sun-moon:has(input:focus-visible) { outline: 2px solid #fff; outline-offset: 2px; }
+
+.sun-moon input {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* sol = círculo cheio; lua = sombra interna deslocada (crescente) */
+.sun-moon__icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 12px currentColor;
+  transform: scale(0.55);
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1), box-shadow 0.5s ease;
+}
+
+/* raios do sol */
+.sun-moon__icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin: -2px;
+  border-radius: 50%;
+  box-shadow:
+    0 -21px currentColor, 0 21px currentColor, 21px 0 currentColor, -21px 0 currentColor,
+    15px 15px currentColor, -15px 15px currentColor, 15px -15px currentColor, -15px -15px currentColor;
+  transition: transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1), opacity 0.3s ease;
+}
+
+.sun-moon:has(input:checked) { color: #e4e4e7; }
+.sun-moon:has(input:checked) .sun-moon__icon { box-shadow: inset 7px -7px 0 0 currentColor; transform: scale(0.9) rotate(-20deg); }
+.sun-moon:has(input:checked) .sun-moon__icon::before { opacity: 0; transform: scale(0) rotate(90deg); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sun-moon, .sun-moon__icon, .sun-moon__icon::before { transition: none; }
+}
